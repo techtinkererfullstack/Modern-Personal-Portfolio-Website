@@ -1,0 +1,443 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#064c39",
+              "background-light": "#f6f8f7",
+              "background-dark": "#10221d",
+              "emerald-accent": "#10b981",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Learning Detail | Tech Portfolio</title>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased transition-colors duration-300"
+  >
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <header
+        class="sticky top-0 z-50 w-full border-b border-primary/20 bg-background-dark/80 backdrop-blur-md px-6 lg:px-20 py-4"
+      >
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <div class="flex items-center gap-8">
+            <div class="flex items-center gap-3 text-emerald-accent">
+              <span class="material-symbols-outlined text-3xl">terminal</span>
+              <h1 class="text-xl font-bold tracking-tight text-slate-100">
+                Tech Portfolio
+              </h1>
+            </div>
+            <nav class="hidden md:flex items-center gap-8">
+              <a
+                class="text-slate-400 hover:text-emerald-accent text-sm font-medium transition-colors"
+                href="#"
+                >Timeline</a
+              >
+              <a
+                class="text-slate-400 hover:text-emerald-accent text-sm font-medium transition-colors"
+                href="#"
+                >Projects</a
+              >
+              <a
+                class="text-slate-100 text-sm font-semibold transition-colors border-b-2 border-emerald-accent pb-1"
+                href="#"
+                >Learning</a
+              >
+              <a
+                class="text-slate-400 hover:text-emerald-accent text-sm font-medium transition-colors"
+                href="#"
+                >About</a
+              >
+            </nav>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="relative hidden sm:block">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"
+                >search</span
+              >
+              <input
+                class="bg-primary/10 border-none rounded-lg pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-emerald-accent/50 w-64 text-slate-200 placeholder:text-slate-500"
+                placeholder="Search documentation..."
+                type="text"
+              />
+            </div>
+            <button
+              class="p-2 rounded-lg bg-primary/20 text-emerald-accent hover:bg-primary/30 transition-colors"
+            >
+              <span class="material-symbols-outlined">light_mode</span>
+            </button>
+          </div>
+        </div>
+      </header>
+      <main class="flex-1 w-full max-w-7xl mx-auto px-6 lg:px-20 py-10">
+        <nav class="flex items-center gap-2 text-sm text-slate-500 mb-8">
+          <a class="hover:text-emerald-accent" href="#">Home</a>
+          <span class="material-symbols-outlined text-xs">chevron_right</span>
+          <a class="hover:text-emerald-accent" href="#">Learning</a>
+          <span class="material-symbols-outlined text-xs">chevron_right</span>
+          <span class="text-emerald-accent font-medium"
+            >React Fiber Deep Dive</span
+          >
+        </nav>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <article class="lg:col-span-8 space-y-8">
+            <header class="space-y-4">
+              <div
+                class="inline-flex items-center px-3 py-1 rounded-full bg-emerald-accent/10 text-emerald-accent text-xs font-bold uppercase tracking-wider"
+              >
+                Advanced Development
+              </div>
+              <h1
+                class="text-4xl md:text-5xl font-black text-slate-100 leading-tight"
+              >
+                Mastering React Reconciliation &amp; Fiber Architecture
+              </h1>
+              <div class="flex items-center gap-6 text-slate-400 text-sm">
+                <div class="flex items-center gap-2">
+                  <span
+                    class="material-symbols-outlined text-emerald-accent text-lg"
+                    >calendar_today</span
+                  >
+                  <span>Published Oct 24, 2023</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span
+                    class="material-symbols-outlined text-emerald-accent text-lg"
+                    >schedule</span
+                  >
+                  <span>12 min read</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span
+                    class="material-symbols-outlined text-emerald-accent text-lg"
+                    >person</span
+                  >
+                  <span>By Dev Scholar</span>
+                </div>
+              </div>
+            </header>
+            <div
+              class="w-full aspect-video rounded-xl overflow-hidden relative group"
+            >
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent"
+              ></div>
+              <img
+                alt="Technical visualization of React Fiber architecture nodes"
+                class="w-full h-full object-cover"
+                data-alt="Modern abstract visualization of connected neural nodes and digital data"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_2UrqGPgZonToESvcXXIDiBQQShwvtWdqX26RMg8urDJcgsoonkeCjMY4cb04tZ2JrCFV8L6iMmtywCwFRchpyRk8MAlfsqyuvwx9vFWWyhUTGAWUtInl5gZehPo0ByqEzJhIaKQEwXMHEbvB4MmagJ46pSvsFtricbUOLZ2AQBe7ui217qMmyKL-RbimyF9hBOjA_s04QDh282_OgKcB7lmYLAyG1w9EHRh2aReNNyuARSzpKM6yqQBkujw9Kt3jB1Da5NFS97w"
+              />
+            </div>
+            <div
+              class="prose prose-invert prose-emerald max-w-none space-y-6 text-slate-300 leading-relaxed text-lg"
+            >
+              <p
+                class="text-xl text-slate-200 font-medium italic border-l-4 border-emerald-accent pl-6 py-2"
+              >
+                The introduction of the Fiber architecture in React 16 wasn't
+                just a performance boost—it was a fundamental rewrite that
+                enabled concurrent features.
+              </p>
+              <h2
+                class="text-2xl font-bold text-slate-100 pt-4 flex items-center gap-3"
+              >
+                <span
+                  class="w-8 h-8 rounded bg-primary flex items-center justify-center text-sm"
+                  >1</span
+                >
+                What is Reconciliation?
+              </h2>
+              <p>
+                Reconciliation is the algorithm React uses to diff one tree with
+                another to determine which parts need to be changed. In the
+                older stack reconciler, this process was recursive and
+                synchronous, which could lead to main-thread blocking during
+                complex updates.
+              </p>
+              <div
+                class="my-8 rounded-xl bg-[#0d1a17] border border-primary/30 overflow-hidden"
+              >
+                <div
+                  class="flex items-center justify-between bg-primary/20 px-4 py-2 border-b border-primary/30"
+                >
+                  <span
+                    class="text-xs font-mono text-emerald-accent uppercase tracking-widest"
+                    >DiffingComponent.tsx</span
+                  >
+                  <button class="text-slate-400 hover:text-slate-200">
+                    <span class="material-symbols-outlined text-sm"
+                      >content_copy</span
+                    >
+                  </button>
+                </div>
+                <pre
+                  class="p-6 overflow-x-auto font-mono text-sm leading-6 text-emerald-50"
+                ><code><span class="text-emerald-400">const</span> diffTrees = (oldTree, newTree) =&gt; {
+  <span class="text-emerald-500">// Check if root nodes match</span>
+  <span class="text-emerald-400">if</span> (oldTree.type !== newTree.type) {
+    <span class="text-emerald-500">// Complete re-render needed</span>
+    <span class="text-emerald-400">return</span> replaceNode(oldTree, newTree);
+  }
+  
+  <span class="text-emerald-500">// Diff props and children</span>
+  updateProps(oldTree, newTree.props);
+  diffChildren(oldTree.children, newTree.children);
+};</code></pre>
+              </div>
+              <h2
+                class="text-2xl font-bold text-slate-100 pt-4 flex items-center gap-3"
+              >
+                <span
+                  class="w-8 h-8 rounded bg-primary flex items-center justify-center text-sm"
+                  >2</span
+                >
+                The Fiber Transformation
+              </h2>
+              <p>
+                Fiber represents a unit of work. By breaking reconciliation into
+                smaller, incremental units, React can pause, resume, or discard
+                work based on priority. This is the foundation of
+                <strong>Concurrent Mode</strong>.
+              </p>
+              <ul class="space-y-4 list-none pl-0">
+                <li class="flex gap-3">
+                  <span class="material-symbols-outlined text-emerald-accent"
+                    >check_circle</span
+                  >
+                  <span
+                    ><strong>Incremental Rendering:</strong> Splitting work into
+                    chunks.</span
+                  >
+                </li>
+                <li class="flex gap-3">
+                  <span class="material-symbols-outlined text-emerald-accent"
+                    >check_circle</span
+                  >
+                  <span
+                    ><strong>Task Prioritization:</strong> High-priority tasks
+                    (input) take precedence.</span
+                  >
+                </li>
+                <li class="flex gap-3">
+                  <span class="material-symbols-outlined text-emerald-accent"
+                    >check_circle</span
+                  >
+                  <span
+                    ><strong>Pause &amp; Resume:</strong> The main thread
+                    remains responsive.</span
+                  >
+                </li>
+              </ul>
+            </div>
+            <div
+              class="pt-12 border-t border-primary/20 flex flex-wrap items-center justify-between gap-6"
+            >
+              <div class="flex items-center gap-4">
+                <span class="text-sm font-semibold text-slate-400">Share:</span>
+                <div class="flex gap-2">
+                  <button
+                    class="size-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-emerald-accent hover:text-white transition-all"
+                  >
+                    <span class="material-symbols-outlined text-xl">share</span>
+                  </button>
+                  <button
+                    class="size-10 rounded-lg bg-primary/10 flex items-center justify-center hover:bg-emerald-accent hover:text-white transition-all"
+                  >
+                    <span class="material-symbols-outlined text-xl"
+                      >bookmark</span
+                    >
+                  </button>
+                </div>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-sm text-slate-400 italic"
+                  >Was this helpful?</span
+                >
+                <button
+                  class="px-4 py-2 rounded-lg bg-emerald-accent text-primary font-bold text-sm hover:scale-105 transition-transform"
+                >
+                  Upvote Article
+                </button>
+              </div>
+            </div>
+          </article>
+          <aside class="lg:col-span-4 space-y-8">
+            <div
+              class="p-6 rounded-xl bg-primary/5 border border-primary/20 sticky top-28"
+            >
+              <h3
+                class="text-lg font-bold text-slate-100 mb-6 flex items-center gap-2"
+              >
+                <span class="material-symbols-outlined text-emerald-accent"
+                  >timeline</span
+                >
+                Related Milestones
+              </h3>
+              <div class="space-y-6">
+                <div
+                  class="relative pl-6 before:absolute before:left-0 before:top-2 before:bottom-[-24px] before:w-px before:bg-primary/30 last:before:hidden"
+                >
+                  <div
+                    class="absolute left-[-4px] top-2 size-2 rounded-full bg-emerald-accent shadow-[0_0_8px_#10b981]"
+                  ></div>
+                  <a class="group block" href="#">
+                    <span
+                      class="text-[10px] font-bold text-emerald-accent uppercase tracking-widest block mb-1"
+                      >Coming Next</span
+                    >
+                    <h4
+                      class="text-sm font-semibold text-slate-200 group-hover:text-emerald-accent transition-colors"
+                    >
+                      Server Components &amp; Hydration
+                    </h4>
+                    <p class="text-xs text-slate-500 mt-1 line-clamp-1">
+                      Bridging the gap between server and client rendering.
+                    </p>
+                  </a>
+                </div>
+                <div
+                  class="relative pl-6 before:absolute before:left-0 before:top-2 before:bottom-[-24px] before:w-px before:bg-primary/30 last:before:hidden"
+                >
+                  <div
+                    class="absolute left-[-4px] top-2 size-2 rounded-full bg-slate-600"
+                  ></div>
+                  <a class="group block" href="#">
+                    <span
+                      class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-1"
+                      >Previous</span
+                    >
+                    <h4
+                      class="text-sm font-semibold text-slate-200 group-hover:text-emerald-accent transition-colors"
+                    >
+                      Managing Complex State with Redux Saga
+                    </h4>
+                    <p class="text-xs text-slate-500 mt-1 line-clamp-1">
+                      Side effects and asynchronous flow handling in production.
+                    </p>
+                  </a>
+                </div>
+                <div class="relative pl-6 last:before:hidden">
+                  <div
+                    class="absolute left-[-4px] top-2 size-2 rounded-full bg-slate-600"
+                  ></div>
+                  <a class="group block" href="#">
+                    <span
+                      class="text-[10px] font-bold text-slate-500 uppercase tracking-widest block mb-1"
+                      >Foundational</span
+                    >
+                    <h4
+                      class="text-sm font-semibold text-slate-200 group-hover:text-emerald-accent transition-colors"
+                    >
+                      Vanilla JS Core Concepts
+                    </h4>
+                    <p class="text-xs text-slate-500 mt-1 line-clamp-1">
+                      Understanding Closures, Prototypes, and the Event Loop.
+                    </p>
+                  </a>
+                </div>
+              </div>
+              <div
+                class="mt-10 p-4 rounded-lg bg-primary/20 border border-primary/30"
+              >
+                <h5 class="text-xs font-bold text-emerald-accent mb-2">
+                  PRO TIP
+                </h5>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  Use the <strong>React Profiler</strong> tab in DevTools to
+                  visualize Fiber commit phases and identify render bottlenecks.
+                </p>
+              </div>
+              <button
+                class="w-full mt-8 flex items-center justify-center gap-2 py-3 rounded-lg border border-primary/50 text-slate-300 font-bold text-sm hover:bg-primary/10 transition-colors"
+              >
+                <span class="material-symbols-outlined text-sm"
+                  >arrow_back</span
+                >
+                Back to Timeline
+              </button>
+            </div>
+            <div
+              class="p-6 rounded-xl bg-gradient-to-br from-primary/20 to-transparent border border-primary/20"
+            >
+              <h3 class="text-lg font-bold text-slate-100 mb-4">Newsletter</h3>
+              <p class="text-sm text-slate-400 mb-6">
+                Get technical deep dives delivered to your inbox every
+                fortnight.
+              </p>
+              <form class="space-y-3">
+                <input
+                  class="w-full bg-background-dark/50 border-primary/30 rounded-lg text-sm focus:ring-emerald-accent"
+                  placeholder="email@example.com"
+                  type="email"
+                />
+                <button
+                  class="w-full py-2.5 rounded-lg bg-emerald-accent text-primary font-bold text-sm"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </main>
+      <footer
+        class="mt-20 border-t border-primary/20 bg-primary/5 py-12 px-6 lg:px-20"
+      >
+        <div
+          class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <div class="flex items-center gap-3 text-slate-500">
+            <span class="material-symbols-outlined">terminal</span>
+            <p class="text-sm">
+              © 2023 Tech Portfolio Learning Path. Built with precision.
+            </p>
+          </div>
+          <div class="flex items-center gap-8">
+            <a class="text-slate-500 hover:text-emerald-accent text-sm" href="#"
+              >GitHub</a
+            >
+            <a class="text-slate-500 hover:text-emerald-accent text-sm" href="#"
+              >LinkedIn</a
+            >
+            <a class="text-slate-500 hover:text-emerald-accent text-sm" href="#"
+              >RSS Feed</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

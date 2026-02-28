@@ -1,0 +1,642 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>DevPortfolio | Blog &amp; Notes</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#064c39",
+              "background-light": "#f6f8f7",
+              "background-dark": "#10221d",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .glass-nav {
+        background: rgba(16, 34, 29, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen"
+  >
+    <nav class="sticky top-0 z-50 glass-nav border-b border-primary/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-primary text-3xl"
+              >terminal</span
+            >
+            <span
+              class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100"
+              >DevPortfolio</span
+            >
+          </div>
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Home</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Projects</a
+            >
+            <a class="text-sm font-medium text-primary" href="#">Blog</a>
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >About</a
+            >
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="relative hidden sm:block">
+              <span
+                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm"
+                >search</span
+              >
+              <input
+                class="bg-primary/10 border-none rounded-lg py-1.5 pl-9 pr-4 text-sm focus:ring-2 focus:ring-primary w-48 lg:w-64 placeholder:text-slate-500"
+                placeholder="Search articles..."
+                type="text"
+              />
+            </div>
+            <button
+              class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-semibold transition-all"
+            >
+              Contact
+            </button>
+            <div
+              class="size-9 rounded-full bg-primary/20 border border-primary/30 overflow-hidden"
+            >
+              <img
+                alt=""
+                class="w-full h-full object-cover"
+                data-alt="Professional headshot of a developer"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqHxrJhDQCy_tEjnHuZO1OdW0nIQzPnB4X4ASq8im_T5MA0Wg3bsbldnO_0GmeXiIvCCwz0ea-CKledaEvWJVduBC06nFBaM4rZ8JMgD5CodWz9KxG6_LPUvfy3byrDO8DVvJlpQ3Hlku_EFAF4BXlHl1nTxLIMGx0okqadBTuotUJE6R7VA57a3Sn9SV86IoM1ZQJtssN57eUhnSnlrG_9MafSxXS2mRdDiv1tflUJ8Rkzpe1FwYipaVoZDB-9XPPtP6dAn8Wy4I"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <header class="py-16 md:py-24 border-b border-primary/10">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left"
+      >
+        <h1
+          class="text-4xl md:text-6xl font-black tracking-tight mb-4 text-slate-900 dark:text-slate-100"
+        >
+          Latest Thoughts
+        </h1>
+        <p
+          class="text-lg md:text-xl text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed"
+        >
+          Reflections on engineering high-performance web applications,
+          minimalist interface design, and the journey of a full-stack
+          developer.
+        </p>
+      </div>
+    </header>
+    <section
+      class="py-8 bg-slate-50/50 dark:bg-primary/5 sticky top-16 z-40 border-b border-primary/10 glass-nav"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-2 md:pb-0"
+        >
+          <button
+            class="px-6 py-2 bg-primary text-white rounded-full text-sm font-medium whitespace-nowrap"
+          >
+            All Posts
+          </button>
+          <button
+            class="px-6 py-2 bg-white dark:bg-primary/20 border border-primary/10 hover:border-primary/40 rounded-full text-sm font-medium whitespace-nowrap transition-colors"
+          >
+            Web Development
+          </button>
+          <button
+            class="px-6 py-2 bg-white dark:bg-primary/20 border border-primary/10 hover:border-primary/40 rounded-full text-sm font-medium whitespace-nowrap transition-colors"
+          >
+            UI/UX Design
+          </button>
+          <button
+            class="px-6 py-2 bg-white dark:bg-primary/20 border border-primary/10 hover:border-primary/40 rounded-full text-sm font-medium whitespace-nowrap transition-colors"
+          >
+            Backend
+          </button>
+          <button
+            class="px-6 py-2 bg-white dark:bg-primary/20 border border-primary/10 hover:border-primary/40 rounded-full text-sm font-medium whitespace-nowrap transition-colors"
+          >
+            Personal
+          </button>
+          <button
+            class="px-6 py-2 bg-white dark:bg-primary/20 border border-primary/10 hover:border-primary/40 rounded-full text-sm font-medium whitespace-nowrap transition-colors"
+          >
+            Career
+          </button>
+        </div>
+      </div>
+    </section>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <article
+          class="group flex flex-col bg-white dark:bg-primary/10 rounded-xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all shadow-sm hover:shadow-xl"
+        >
+          <div class="aspect-video overflow-hidden relative">
+            <img
+              alt=""
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="React code visualization on dark screen"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHeYjAHArP0ifieFrk756DtG-onhzku3J1-jd-fv36pIbqg1TWO4HLhLM6dVYh6MvHR_8ldPfhF87bKhEMETP-1INzhxtvQWJLp1j6u1BaUF4pf9FC_JsvmTaDL_7ioNcyVv8dYT_wn_DvDmIlAKwGOE4X5-OKf_JqGyLvCqeHESikRJuGfJGFMim_7i_DiaDwzVS_X8dq68YNA0AhYTO52oVzFGMg-PuDN82SJ_Ya5Pb5oXhCOfFj7XZ49Ok6jPxceYhEezXwXjI"
+            />
+            <span
+              class="absolute top-4 left-4 bg-primary px-3 py-1 text-white text-[10px] font-bold uppercase tracking-wider rounded-full"
+              >Development</span
+            >
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div
+              class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-3"
+            >
+              <span class="material-symbols-outlined text-sm"
+                >calendar_today</span
+              >
+              <span>Oct 24, 2023</span>
+              <span class="mx-1">•</span>
+              <span>8 min read</span>
+            </div>
+            <h3
+              class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight"
+            >
+              Mastering React Server Components
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 mb-6 flex-1 leading-relaxed"
+            >
+              Deep dive into the architecture of React Server Components,
+              exploring how they improve performance by reducing client-side
+              JavaScript.
+            </p>
+            <a
+              class="inline-flex items-center gap-2 text-primary font-bold text-sm group/link"
+              href="#"
+            >
+              Read More
+              <span
+                class="material-symbols-outlined text-base group-hover/link:translate-x-1 transition-transform"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </article>
+        <article
+          class="group flex flex-col bg-white dark:bg-primary/10 rounded-xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all shadow-sm hover:shadow-xl"
+        >
+          <div class="aspect-video overflow-hidden relative">
+            <img
+              alt=""
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Abstract minimalist design pattern"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNLJDGMolqgTH9klNvyrS91tVV8KaiKnepMx4rfETniRbydJlvYAotdIGoKgwSDi0s3suQfQ8iXhBjj0YnwsG7SkNBjy36C4bXoIbjgjOrit1DsD-Uo38G69P_sahZ2kwnRcDaCuRW_8ej03s235NUe1BDqcerJuJWidYHZf1rpRZVxvQQP5h3Oj17imR3ZiaSxNDlKh8cvd2avNJzg0Vfpruahwa3JfgNuivYBsgJVPzQ8bgtDH4awm6tZwffv4iw_4Gj0OLVNt0"
+            />
+            <span
+              class="absolute top-4 left-4 bg-primary px-3 py-1 text-white text-[10px] font-bold uppercase tracking-wider rounded-full"
+              >Design</span
+            >
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div
+              class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-3"
+            >
+              <span class="material-symbols-outlined text-sm"
+                >calendar_today</span
+              >
+              <span>Oct 20, 2023</span>
+              <span class="mx-1">•</span>
+              <span>5 min read</span>
+            </div>
+            <h3
+              class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight"
+            >
+              The Art of Minimalist UI
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 mb-6 flex-1 leading-relaxed"
+            >
+              Why 'less is more' is a fundamental principle in modern software
+              design and how to achieve clarity without sacrificing
+              functionality.
+            </p>
+            <a
+              class="inline-flex items-center gap-2 text-primary font-bold text-sm group/link"
+              href="#"
+            >
+              Read More
+              <span
+                class="material-symbols-outlined text-base group-hover/link:translate-x-1 transition-transform"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </article>
+        <article
+          class="group flex flex-col bg-white dark:bg-primary/10 rounded-xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all shadow-sm hover:shadow-xl"
+        >
+          <div class="aspect-video overflow-hidden relative">
+            <img
+              alt=""
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Data server blinking blue lights"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy301jAykcCUJfyiLnPi9xCsvXYXBLGQLJFgQuq0RvJDe8t363IAcvlthMxeAU74WZgedmfDEjsuNME-YTFerU7oBeisxzqTIZAUmaH-3vl1rXzfzua5bK9rRSuDqx5fC6C18RGlq4FkGzTi8jBZ9I31Ld_emxLznCyIe0iZCt1NBh7qd5dcBe_U3n6ngNFKcl4smvpjS9_1Z_vujvVAp2ICGzD_bcaUHprr4jWZulMMqeEcpILBfBng5IFwemkjUVk3luhaYjj1I"
+            />
+            <span
+              class="absolute top-4 left-4 bg-primary px-3 py-1 text-white text-[10px] font-bold uppercase tracking-wider rounded-full"
+              >Backend</span
+            >
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div
+              class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-3"
+            >
+              <span class="material-symbols-outlined text-sm"
+                >calendar_today</span
+              >
+              <span>Oct 15, 2023</span>
+              <span class="mx-1">•</span>
+              <span>12 min read</span>
+            </div>
+            <h3
+              class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight"
+            >
+              Scalable Architecture 101
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 mb-6 flex-1 leading-relaxed"
+            >
+              Building systems that grow gracefully. A guide to microservices,
+              load balancing, and efficient database indexing strategies.
+            </p>
+            <a
+              class="inline-flex items-center gap-2 text-primary font-bold text-sm group/link"
+              href="#"
+            >
+              Read More
+              <span
+                class="material-symbols-outlined text-base group-hover/link:translate-x-1 transition-transform"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </article>
+        <article
+          class="group flex flex-col bg-white dark:bg-primary/10 rounded-xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all shadow-sm hover:shadow-xl"
+        >
+          <div class="aspect-video overflow-hidden relative">
+            <img
+              alt=""
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Laptop and coffee on a wooden desk"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2UD2chGuceuP_TyeWk9RHdahv-vDOsATfKnCmA4lv8iLMVGzVntjnOSHrnFNDQGX0u0Js3vEV8sQDtYGFoFfqaAF94oYGgo_ZyxZkyUbrCZn5teRGZGmUEB4uGOqHgVKEUFe1T7btTtGmO_o0G4gvYn8PRtI9mgmnZxTo34W4L-BecgCw8-GLsdgTPFMKoXYaHUHFFt7dt4nAsMAiaQzdvD3nxWI6ZDINqPvGMaMORZlCtfMWbFa7BefOUta3avxbFyeYs1KU_vU"
+            />
+            <span
+              class="absolute top-4 left-4 bg-primary px-3 py-1 text-white text-[10px] font-bold uppercase tracking-wider rounded-full"
+              >Personal</span
+            >
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div
+              class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-3"
+            >
+              <span class="material-symbols-outlined text-sm"
+                >calendar_today</span
+              >
+              <span>Oct 10, 2023</span>
+              <span class="mx-1">•</span>
+              <span>4 min read</span>
+            </div>
+            <h3
+              class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight"
+            >
+              A Week in the Life of a Dev
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 mb-6 flex-1 leading-relaxed"
+            >
+              Behind the screens: balancing deep work, continuous learning, and
+              maintaining a healthy work-life integration as a solo dev.
+            </p>
+            <a
+              class="inline-flex items-center gap-2 text-primary font-bold text-sm group/link"
+              href="#"
+            >
+              Read More
+              <span
+                class="material-symbols-outlined text-base group-hover/link:translate-x-1 transition-transform"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </article>
+        <article
+          class="group flex flex-col bg-white dark:bg-primary/10 rounded-xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all shadow-sm hover:shadow-xl"
+        >
+          <div class="aspect-video overflow-hidden relative">
+            <img
+              alt=""
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Cybersecurity lock icon on screen"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCH6IQEz6BY824CK_pRP_iubh0Z_GlPCsaHkudkJ0FvXod3xCqGEubtVd2pwFAM1N68PKTyDE7Hbj6xrBmvqne_uX0hdGmnQXlnXP91DIJ8HvdPTyZf6LKhljyEZce-vEfpsxpTOYUYNFUDoTiqkqhDKOwBHGnfiQOYnRR443ekbaahozXiBX9nVfxAvYHEAdJBigezcTETkxBMJUnaDa9GYOoSJXsJtqREVdEGnB6oKrCodgAxv2ZTpJXVhuFr3R59rM2M6YTj0NQ"
+            />
+            <span
+              class="absolute top-4 left-4 bg-primary px-3 py-1 text-white text-[10px] font-bold uppercase tracking-wider rounded-full"
+              >Security</span
+            >
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div
+              class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-3"
+            >
+              <span class="material-symbols-outlined text-sm"
+                >calendar_today</span
+              >
+              <span>Oct 05, 2023</span>
+              <span class="mx-1">•</span>
+              <span>10 min read</span>
+            </div>
+            <h3
+              class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight"
+            >
+              Securing Your Web Apps
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 mb-6 flex-1 leading-relaxed"
+            >
+              Practical tips for front-end developers to prevent common
+              vulnerabilities like XSS, CSRF, and injection attacks.
+            </p>
+            <a
+              class="inline-flex items-center gap-2 text-primary font-bold text-sm group/link"
+              href="#"
+            >
+              Read More
+              <span
+                class="material-symbols-outlined text-base group-hover/link:translate-x-1 transition-transform"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </article>
+        <article
+          class="group flex flex-col bg-white dark:bg-primary/10 rounded-xl overflow-hidden border border-primary/10 hover:border-primary/30 transition-all shadow-sm hover:shadow-xl"
+        >
+          <div class="aspect-video overflow-hidden relative">
+            <img
+              alt=""
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="High tech hardware circuit board"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuALmWP6_0CAZ1HVKDqABHo442L4raS8vsJ7HdmEy_U1PnqNty-gkeNqRxaD8k7kS0FJt-Mx4cKYvN9f-xVzzJhk9bTZ-zJquU3SVROs9Pa5f8BntTf8wfFVzvKHFkkBj3DGn78hHUxDILyJazBSji_6wvNhhZ3ILWMe8inszw4xvgcLfJYqXQtnEdSrZpoS1b7q8mrQWAzgqHZ0uNm9MZYy1HlWQSukhkuXaWVSBP1zdD2Tjr7_V7j9bJ1IMxbIHMDIaQybMG8R8go"
+            />
+            <span
+              class="absolute top-4 left-4 bg-primary px-3 py-1 text-white text-[10px] font-bold uppercase tracking-wider rounded-full"
+              >Systems</span
+            >
+          </div>
+          <div class="p-6 flex flex-col flex-1">
+            <div
+              class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 mb-3"
+            >
+              <span class="material-symbols-outlined text-sm"
+                >calendar_today</span
+              >
+              <span>Sep 28, 2023</span>
+              <span class="mx-1">•</span>
+              <span>6 min read</span>
+            </div>
+            <h3
+              class="text-xl font-bold mb-3 group-hover:text-primary transition-colors leading-tight"
+            >
+              Optimizing V8 Runtime
+            </h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm line-clamp-3 mb-6 flex-1 leading-relaxed"
+            >
+              Understanding how your JavaScript code is executed at the hardware
+              level and how to write engine-friendly code.
+            </p>
+            <a
+              class="inline-flex items-center gap-2 text-primary font-bold text-sm group/link"
+              href="#"
+            >
+              Read More
+              <span
+                class="material-symbols-outlined text-base group-hover/link:translate-x-1 transition-transform"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+        </article>
+      </div>
+      <div class="mt-16 flex items-center justify-center gap-2">
+        <button
+          class="size-10 flex items-center justify-center rounded-lg hover:bg-primary/20 text-slate-400"
+        >
+          <span class="material-symbols-outlined">chevron_left</span>
+        </button>
+        <button
+          class="size-10 flex items-center justify-center rounded-lg bg-primary text-white font-bold"
+        >
+          1
+        </button>
+        <button
+          class="size-10 flex items-center justify-center rounded-lg hover:bg-primary/20 transition-colors"
+        >
+          2
+        </button>
+        <button
+          class="size-10 flex items-center justify-center rounded-lg hover:bg-primary/20 transition-colors"
+        >
+          3
+        </button>
+        <span class="px-2 text-slate-400">...</span>
+        <button
+          class="size-10 flex items-center justify-center rounded-lg hover:bg-primary/20 transition-colors"
+        >
+          12
+        </button>
+        <button
+          class="size-10 flex items-center justify-center rounded-lg hover:bg-primary/20 text-slate-400"
+        >
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+      </div>
+    </main>
+    <footer class="border-t border-primary/20 py-12 mt-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+          <div class="col-span-1 md:col-span-2">
+            <div class="flex items-center gap-2 mb-6">
+              <span class="material-symbols-outlined text-primary text-3xl"
+                >terminal</span
+              >
+              <span
+                class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100"
+                >DevPortfolio</span
+              >
+            </div>
+            <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-sm">
+              Curating knowledge and experiences from the world of software
+              development. Join me as I explore the intersection of technology
+              and creativity.
+            </p>
+            <div class="flex gap-4">
+              <a
+                class="size-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-all"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-xl">share</span>
+              </a>
+              <a
+                class="size-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-all"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-xl"
+                  >alternate_email</span
+                >
+              </a>
+              <a
+                class="size-10 flex items-center justify-center rounded-full bg-primary/10 hover:bg-primary/20 text-primary transition-all"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-xl">public</span>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4
+              class="font-bold text-slate-900 dark:text-slate-100 mb-6 uppercase text-xs tracking-widest"
+            >
+              Navigation
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                  href="#"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                  href="#"
+                  >Projects</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                  href="#"
+                  >About Me</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                  href="#"
+                  >Resume</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4
+              class="font-bold text-slate-900 dark:text-slate-100 mb-6 uppercase text-xs tracking-widest"
+            >
+              Resources
+            </h4>
+            <ul class="space-y-4">
+              <li>
+                <a
+                  class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                  href="#"
+                  >Snippets</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                  href="#"
+                  >Gear List</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                  href="#"
+                  >Style Guide</a
+                >
+              </li>
+              <li>
+                <a
+                  class="text-sm text-slate-600 dark:text-slate-400 hover:text-primary transition-colors"
+                  href="#"
+                  >Newsletter</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="pt-8 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500"
+        >
+          <p>© 2023 DevPortfolio. Built with Tailwind CSS and Inter.</p>
+          <div class="flex gap-8">
+            <a class="hover:text-primary transition-colors" href="#"
+              >Privacy Policy</a
+            >
+            <a class="hover:text-primary transition-colors" href="#"
+              >Terms of Service</a
+            >
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

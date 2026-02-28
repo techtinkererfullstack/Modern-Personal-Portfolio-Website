@@ -1,0 +1,874 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Professional Portfolio | Crafting Digital Experiences</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#10b981", // Emerald-500
+              "background-light": "#f8fdfa",
+              "background-dark": "#10221d",
+              sage: {
+                50: "#f0fdf4",
+                100: "#dcfce7",
+                200: "#bbf7d0",
+                300: "#86efac",
+                400: "#4ade80",
+                500: "#22c55e",
+                600: "#16a34a",
+                700: "#15803d",
+                800: "#166534",
+                900: "#14532d",
+                950: "#052e16",
+              },
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .glass-nav {
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .dark .glass-nav {
+        background: rgba(16, 34, 29, 0.7);
+        border-bottom: 1px solid rgba(16, 185, 129, 0.1);
+      }
+      html:not(.dark) .glass-nav {
+        background: rgba(248, 253, 250, 0.8);
+        border-bottom: 1px solid rgba(16, 185, 129, 0.15);
+      }
+    </style>
+    <style>
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .stagger-item {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.active .stagger-item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      /* Delay loops for staggered items */
+      .reveal.active .stagger-item:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      .reveal.active .stagger-item:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+      .reveal.active .stagger-item:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+      .reveal.active .stagger-item:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+    </style>
+    <style>
+      html.dark,
+      html:not(.dark) {
+        transition:
+          background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      body,
+      header,
+      footer,
+      section,
+      div,
+      p,
+      h1,
+      h2,
+      h3,
+      a,
+      button {
+        transition:
+          background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display transition-colors duration-300"
+  >
+    <header
+      class="fixed top-0 z-50 w-full glass-nav border-b border-slate-200 dark:border-white/10"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center gap-2 group cursor-pointer">
+            <div
+              class="p-1.5 bg-primary/20 rounded-lg group-hover:bg-primary/40 transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-primary dark:text-emerald-400"
+                >terminal</span
+              >
+            </div>
+            <span
+              class="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
+              >Portfolio</span
+            >
+          </div>
+          <nav class="hidden md:flex items-center space-x-8">
+            <div class="flex flex-col items-center gap-1 group">
+              <a
+                class="text-sm font-bold text-[#10b77f] transition-colors"
+                href="#"
+                >Home</a
+              >
+              <div class="h-1 w-4 bg-[#10b77f] rounded-full"></div>
+            </div>
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="#"
+              >Projects</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="#"
+              >Learning</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="#"
+              >Blogs</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="#"
+              >Notes</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="#"
+              >Resume</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="#"
+              >About</a
+            >
+          </nav>
+          <div class="flex items-center gap-3">
+            <button
+              class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30 flex items-center justify-center"
+              id="theme-toggle"
+              title="Toggle Theme"
+            >
+              <span
+                class="material-symbols-outlined text-[20px] hidden"
+                id="theme-toggle-dark-icon"
+                >light_mode</span
+              >
+              <span
+                class="material-symbols-outlined text-[20px]"
+                id="theme-toggle-light-icon"
+                >dark_mode</span
+              >
+            </button>
+            <a
+              class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px] align-middle"
+                >code</span
+              >
+            </a>
+            <a
+              class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px] align-middle"
+                >person_add</span
+              >
+            </a>
+            <a
+              class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px] align-middle"
+                >share</span
+              >
+            </a>
+            <button
+              class="md:hidden p-2 hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              onclick="
+                document
+                  .getElementById('mobile-menu')
+                  .classList.remove('hidden')
+              "
+            >
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="pt-32 pb-20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div class="lg:col-span-7 space-y-8 reveal relative">
+            <div
+              class="absolute -top-10 -left-10 w-32 h-32 bg-primary/5 rounded-full blur-2xl parallax-element"
+              data-speed="-0.1"
+            ></div>
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-sage-900 dark:text-emerald-400 text-xs font-bold tracking-wider uppercase"
+            >
+              <span class="relative flex h-2 w-2">
+                <span
+                  class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+                ></span>
+                <span
+                  class="relative inline-flex rounded-full h-2 w-2 bg-primary"
+                ></span>
+              </span>
+              Available for new projects
+            </div>
+            <h1
+              class="text-5xl md:text-7xl font-black tracking-tight leading-[1.1] text-slate-900 dark:text-white text-sage-950"
+            >
+              Crafting Digital Experiences with
+              <span class="text-primary dark:text-emerald-400">Precision.</span>
+            </h1>
+            <p
+              class="text-lg md:text-xl dark:text-slate-400 max-w-2xl leading-relaxed text-sage-800"
+            >
+              I'm a Full-Stack Developer and UI Designer specializing in
+              building scalable applications with Emerald-accented aesthetics
+              and Sage-toned minimalism. I turn complex problems into elegant
+              digital solutions.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+              <button
+                class="px-8 py-4 bg-primary hover:bg-primary/90 text-white rounded-xl font-bold transition-all transform hover:-translate-y-1 shadow-lg shadow-primary/20"
+              >
+                View My Work
+              </button>
+              <button
+                class="px-8 py-4 bg-slate-200 dark:bg-white/5 hover:bg-slate-300 dark:hover:bg-white/10 text-slate-900 dark:text-white rounded-xl font-bold transition-all border border-slate-300/50 dark:border-white/10"
+              >
+                Download CV
+              </button>
+            </div>
+            <div
+              class="flex items-center gap-8 pt-8 border-t dark:border-white/5 border-sage-100"
+            >
+              <div class="flex flex-col">
+                <span class="text-2xl font-bold text-slate-900 dark:text-white"
+                  >5+</span
+                >
+                <span class="text-sm text-slate-500 uppercase tracking-wider"
+                  >Years Exp.</span
+                >
+              </div>
+              <div class="flex flex-col">
+                <span class="text-2xl font-bold text-slate-900 dark:text-white"
+                  >120+</span
+                >
+                <span class="text-sm text-slate-500 uppercase tracking-wider"
+                  >Projects Done</span
+                >
+              </div>
+              <div class="flex flex-col">
+                <span class="text-2xl font-bold text-slate-900 dark:text-white"
+                  >40+</span
+                >
+                <span class="text-sm text-slate-500 uppercase tracking-wider"
+                  >Clients</span
+                >
+              </div>
+            </div>
+          </div>
+          <div class="lg:col-span-5 relative reveal">
+            <div
+              class="absolute -top-20 -right-20 w-64 h-64 bg-primary/10 rounded-full blur-3xl parallax-element"
+              data-speed="0.1"
+            ></div>
+            <div
+              class="absolute -bottom-40 -left-20 w-80 h-80 bg-emerald-500/5 rounded-full blur-[100px] parallax-element"
+              data-speed="0.15"
+            ></div>
+            <div
+              class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-30"
+            ></div>
+            <div
+              class="relative aspect-square w-full rounded-3xl overflow-hidden border border-white/10 shadow-2xl dark:bg-slate-800 parallax-element bg-sage-100"
+              data-speed="0.05"
+            >
+              <img
+                alt="Professional Workspace"
+                class="w-full h-full object-cover hover:grayscale-0 transition-all duration-700"
+                data-alt="Minimalist desk setup with laptop and plant"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4d7mI-eOCLvSY81r3XU_G6FR7tVfhzdfexc9AbweE5rKuu3QHL33HEc1Hn66xTKl8h6_D-FUnKeI5jPtERNe8HEiOZ-LSP3uYKppd9wQ1NuHkRJIPNHrMF6MCZ2GXKqhO5dUBNC71KYhCZRbh8Si3hIXqzgsMNTTrxed2ABlxjY79ZK6q-RodQb6mQeoBV9zlf2VNpj7KUNoNFh4XAXrNIUVZzBdHdopt6TfZhMWZInDSUDqnm1k3UkxVql7wZNCH0EJ8SG_PdIc"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background-dark/80 via-transparent to-transparent"
+              ></div>
+              <div
+                class="absolute bottom-6 left-6 right-6 p-4 glass-nav bg-white/10 rounded-2xl border border-white/10"
+              >
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white"
+                  >
+                    <span class="material-symbols-outlined">bolt</span>
+                  </div>
+                  <div>
+                    <p class="text-sm font-bold text-white">Latest Project</p>
+                    <p class="text-xs text-slate-300">
+                      SaaS Analytics Dashboard 2.0
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="mt-32 reveal">
+          <div class="flex justify-between items-end mb-10">
+            <div>
+              <h2 class="text-3xl font-bold text-slate-900 dark:text-white">
+                Featured Projects
+              </h2>
+              <div class="h-1.5 w-12 bg-primary mt-2 rounded-full"></div>
+            </div>
+            <a
+              class="text-sm font-semibold text-primary dark:text-emerald-400 flex items-center gap-1 hover:gap-2 transition-all"
+              href="#"
+            >
+              View All Projects
+              <span class="material-symbols-outlined text-sm"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="group cursor-pointer stagger-item">
+              <div
+                class="relative aspect-video rounded-2xl overflow-hidden mb-4 border dark:border-white/5 bg-sage-50 border-sage-100"
+              >
+                <img
+                  alt="E-commerce project"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="Modern e-commerce platform interface on screen"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2DL9yLYBih8V1pEuZGNwG-0i-sHZQ-nb4d5N3kcgL53guCcY4JvMYc6QbhnVFlGWptY0m2qBKQLD4KR9Gj3tZOdJdYzGK4uNg7nuoRKOdYqzQJO7RUl4JItC_HpzAnkZoHskDW2XUwBKSR6HRjfWqLQrTWjW2n_lP3GtR8nneiOl-AKXEcWhKkSwFr9v9OLRiWAfZwjFU8LxPXEmL4KjRkNBmlI_Lf-Ta7Jxs2kPTtwVxxDTbuB9HhLtiDINfBuzpAm7iyBK9hOo"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+                >
+                  <span
+                    class="px-4 py-2 bg-white text-primary rounded-lg font-bold"
+                    >View Case Study</span
+                  >
+                </div>
+                <div class="absolute top-3 right-3 flex gap-2">
+                  <a
+                    class="p-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-emerald-500 hover:border-emerald-400 transition-all"
+                    href="#"
+                    title="Live Demo"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >open_in_new</span
+                    >
+                  </a>
+                  <a
+                    class="p-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-emerald-500 hover:border-emerald-400 transition-all"
+                    href="#"
+                    title="Frontend Code"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >terminal</span
+                    >
+                  </a>
+                  <a
+                    class="p-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-emerald-500 hover:border-emerald-400 transition-all"
+                    href="#"
+                    title="Backend Code"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >database</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <h3
+                class="text-xl font-bold group-hover:text-primary dark:group-hover:text-emerald-400 transition-colors"
+              >
+                E-commerce Evolution
+              </h3>
+              <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">
+                Full-stack Next.js application with Stripe integration.
+              </p>
+            </div>
+            <div class="group cursor-pointer stagger-item">
+              <div
+                class="relative aspect-video rounded-2xl overflow-hidden mb-4 border dark:border-white/5 bg-sage-50 border-sage-100"
+              >
+                <img
+                  alt="SaaS Dashboard"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="Detailed data visualization dashboard with dark theme"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGrK_9FShIEenbP4BDRNTa1s0nPYGu5zFz6gmJk0bu9xN7PrZrHbcnFNx1i6E_j9t60jBAXRG3R6f0OYnzhstQqUuy4N95BmS6QSllbJg1PifrAZQZL5fBMG3fsW8WHDpJXXwe4RpnQWyH5FeBj-b-6d2yp92XqFnOwpSFt7dJwz0bmVmdvOYm8CyQjqoWZ--sMmnzwqyM4oM9SK3tPToVJ5hwC6PvlovGXC8KXgvsBODYRXZhhJBvy47F7iulehN6c3T7A8UwMyY"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+                >
+                  <span
+                    class="px-4 py-2 bg-white text-primary rounded-lg font-bold"
+                    >View Case Study</span
+                  >
+                </div>
+                <div class="absolute top-3 right-3 flex gap-2">
+                  <a
+                    class="p-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-emerald-500 hover:border-emerald-400 transition-all"
+                    href="#"
+                    title="Live Demo"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >open_in_new</span
+                    >
+                  </a>
+                  <a
+                    class="p-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-emerald-500 hover:border-emerald-400 transition-all"
+                    href="#"
+                    title="Frontend Code"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >terminal</span
+                    >
+                  </a>
+                  <a
+                    class="p-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-emerald-500 hover:border-emerald-400 transition-all"
+                    href="#"
+                    title="Backend Code"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >database</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <h3
+                class="text-xl font-bold group-hover:text-primary dark:group-hover:text-emerald-400 transition-colors"
+              >
+                Analytics Pro
+              </h3>
+              <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">
+                Real-time data visualization tool for enterprise teams.
+              </p>
+            </div>
+            <div class="group cursor-pointer stagger-item">
+              <div
+                class="relative aspect-video rounded-2xl overflow-hidden mb-4 border dark:border-white/5 bg-sage-50 border-sage-100"
+              >
+                <img
+                  alt="AI Portfolio"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  data-alt="Abstract AI neural network visualization"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1GMpZSjaj5-KM0fNMGiw6S0U9RjpXkcH83_5nVrpPv_29oa6yNV9h7x8baZwp0jAd5VzRqdBHRyBqzFgBe39h_2pJYHg0IHpPXHlxxwwT27FYzjcltX5ST4IO5-7EC6XQ-WOhyNS-fLxfs7ihIePGDI75ek1IaYZjtt5mOm2U3xBhu4jLawVqlP2jzSh3ksDKWrvpPvVUgWn7GfKiceHn0Nyohr9tvpHFc036MOxv1k4vfzS-LkxiCMd9vyeDZD_AYAbT58ESKpM"
+                />
+                <div
+                  class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center"
+                >
+                  <span
+                    class="px-4 py-2 bg-white text-primary rounded-lg font-bold"
+                    >View Case Study</span
+                  >
+                </div>
+                <div class="absolute top-3 right-3 flex gap-2">
+                  <a
+                    class="p-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-emerald-500 hover:border-emerald-400 transition-all"
+                    href="#"
+                    title="Live Demo"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >open_in_new</span
+                    >
+                  </a>
+                  <a
+                    class="p-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-emerald-500 hover:border-emerald-400 transition-all"
+                    href="#"
+                    title="Frontend Code"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >terminal</span
+                    >
+                  </a>
+                  <a
+                    class="p-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-lg text-white hover:bg-emerald-500 hover:border-emerald-400 transition-all"
+                    href="#"
+                    title="Backend Code"
+                  >
+                    <span class="material-symbols-outlined text-sm"
+                      >database</span
+                    >
+                  </a>
+                </div>
+              </div>
+              <h3
+                class="text-xl font-bold group-hover:text-primary dark:group-hover:text-emerald-400 transition-colors"
+              >
+                Neural Canvas
+              </h3>
+              <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">
+                AI-driven design tool for generating vector assets.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="mt-32 pb-20 reveal">
+          <div class="flex justify-between items-end mb-10">
+            <div>
+              <h2 class="text-3xl font-bold text-slate-900 dark:text-white">
+                Latest Thoughts
+              </h2>
+              <div class="h-1.5 w-12 bg-primary mt-2 rounded-full"></div>
+            </div>
+            <a
+              class="text-sm font-semibold text-primary dark:text-emerald-400 flex items-center gap-1 hover:gap-2 transition-all"
+              href="#"
+            >
+              Read Blog
+              <span class="material-symbols-outlined text-sm"
+                >arrow_forward</span
+              >
+            </a>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div
+              class="p-6 rounded-2xl dark:bg-white/5 border dark:border-white/10 hover:border-primary/50 transition-all stagger-item bg-sage-50/50 border-sage-100"
+            >
+              <div class="flex items-center gap-4 mb-4">
+                <span
+                  class="text-xs font-bold text-primary dark:text-emerald-400 uppercase tracking-widest"
+                  >Web Development</span
+                >
+                <span class="text-xs text-slate-500">Oct 24, 2023</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-3">
+                Mastering CSS Grid in 2024
+              </h3>
+              <p class="dark:text-slate-400 mb-6 line-clamp-2 text-sage-800">
+                A deep dive into the latest features of CSS Grid and how to
+                build complex responsive layouts with minimal code.
+              </p>
+              <a
+                class="font-bold text-primary dark:text-emerald-400 flex items-center gap-2 group"
+                href="#"
+              >
+                Read Article
+                <span
+                  class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform"
+                  >east</span
+                >
+              </a>
+            </div>
+            <div
+              class="p-6 rounded-2xl dark:bg-white/5 border dark:border-white/10 hover:border-primary/50 transition-all stagger-item bg-sage-50/50 border-sage-100"
+            >
+              <div class="flex items-center gap-4 mb-4">
+                <span
+                  class="text-xs font-bold text-primary dark:text-emerald-400 uppercase tracking-widest"
+                  >UI Design</span
+                >
+                <span class="text-xs text-slate-500">Oct 18, 2023</span>
+              </div>
+              <h3 class="text-2xl font-bold mb-3">
+                The Psychology of Emerald Accents
+              </h3>
+              <p class="dark:text-slate-400 mb-6 line-clamp-2 text-sage-800">
+                Why deep green tones are becoming the new standard for
+                professional digital interfaces and branding.
+              </p>
+              <a
+                class="font-bold text-primary dark:text-emerald-400 flex items-center gap-2 group"
+                href="#"
+              >
+                Read Article
+                <span
+                  class="material-symbols-outlined text-lg group-hover:translate-x-1 transition-transform"
+                  >east</span
+                >
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer
+      class="dark:bg-black/20 py-12 border-t border-slate-200 dark:border-white/5 bg-sage-50/50"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="flex flex-col md:flex-row justify-between items-center gap-8"
+        >
+          <div class="flex items-center gap-2">
+            <div
+              class="size-8 bg-primary rounded flex items-center justify-center"
+            >
+              <span class="material-symbols-outlined text-white text-sm"
+                >terminal</span
+              >
+            </div>
+            <span class="text-lg font-bold tracking-tight">Portfolio</span>
+          </div>
+          <p class="text-slate-500 text-sm">
+            © 2024 Portfolio Design. All rights reserved.
+          </p>
+          <div class="flex gap-4">
+            <a
+              class="w-10 h-10 rounded-full border border-slate-300 dark:border-white/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]"
+                >alternate_email</span
+              >
+            </a>
+            <a
+              class="w-10 h-10 rounded-full border border-slate-300 dark:border-white/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">hub</span>
+            </a>
+            <a
+              class="w-10 h-10 rounded-full border border-slate-300 dark:border-white/10 flex items-center justify-center hover:bg-primary hover:text-white transition-all"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px]">person</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div
+      class="fixed inset-0 z-[100] bg-background-dark/90 backdrop-blur-[20px] flex flex-col hidden lg:hidden"
+      id="mobile-menu"
+    >
+      <div class="flex justify-between items-center h-16 px-4 sm:px-6">
+        <div class="flex items-center gap-2">
+          <div class="p-1.5 bg-primary/20 rounded-lg">
+            <span class="material-symbols-outlined text-emerald-400"
+              >terminal</span
+            >
+          </div>
+          <span class="text-xl font-bold tracking-tight text-white"
+            >Portfolio</span
+          >
+        </div>
+        <button
+          class="p-2 text-white hover:text-emerald-400 transition-colors"
+          onclick="
+            document.getElementById('mobile-menu').classList.add('hidden')
+          "
+        >
+          <span class="material-symbols-outlined text-3xl">close</span>
+        </button>
+      </div>
+      <nav class="flex-1 flex flex-col items-center justify-center space-y-8">
+        <div class="flex flex-col items-center gap-2">
+          <a class="text-3xl font-black text-[#10b77f]" href="#">Home</a>
+          <div class="h-1.5 w-8 bg-[#10b77f] rounded-full"></div>
+        </div>
+        <a
+          class="text-3xl font-bold text-white hover:text-emerald-400 transition-colors"
+          href="#"
+          >Projects</a
+        >
+        <a
+          class="text-3xl font-bold text-white hover:text-emerald-400 transition-colors"
+          href="#"
+          >Learning</a
+        >
+        <a
+          class="text-3xl font-bold text-white hover:text-emerald-400 transition-colors"
+          href="#"
+          >Blogs</a
+        >
+        <a
+          class="text-3xl font-bold text-white hover:text-emerald-400 transition-colors"
+          href="#"
+          >Notes</a
+        >
+        <a
+          class="text-3xl font-bold text-white hover:text-emerald-400 transition-colors"
+          href="#"
+          >Resume</a
+        >
+        <a
+          class="text-3xl font-bold text-white hover:text-emerald-400 transition-colors"
+          href="#"
+          >About</a
+        >
+      </nav>
+      <div class="pb-12 flex justify-center gap-8">
+        <a
+          class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all"
+          href="#"
+        >
+          <span class="material-symbols-outlined">hub</span>
+        </a>
+        <a
+          class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all"
+          href="#"
+        >
+          <span class="material-symbols-outlined">person</span>
+        </a>
+        <a
+          class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-primary hover:border-primary transition-all"
+          href="#"
+        >
+          <span class="material-symbols-outlined">alternate_email</span>
+        </a>
+      </div>
+    </div>
+    <script>
+      const observerOptions = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, observerOptions);
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+    <script>
+      (function () {
+        const parallaxElements = document.querySelectorAll(".parallax-element");
+
+        function updateParallax() {
+          const scrollY = window.pageYOffset;
+
+          parallaxElements.forEach((el) => {
+            const speed = parseFloat(el.getAttribute("data-speed")) || 0.1;
+            // Simple parallax calculation: translate based on scroll position and speed factor
+            const yPos = scrollY * speed;
+            el.style.transform = `translateY(${yPos}px)`;
+          });
+
+          requestAnimationFrame(updateParallax);
+        }
+
+        // Start the animation loop
+        requestAnimationFrame(updateParallax);
+      })();
+    </script>
+    <script>
+      const themeToggleBtn = document.getElementById("theme-toggle");
+      const darkIcon = document.getElementById("theme-toggle-dark-icon");
+      const lightIcon = document.getElementById("theme-toggle-light-icon");
+
+      // Function to update icons based on current theme
+      function updateIcons() {
+        if (document.documentElement.classList.contains("dark")) {
+          darkIcon.classList.remove("hidden");
+          lightIcon.classList.add("hidden");
+        } else {
+          darkIcon.classList.add("hidden");
+          lightIcon.classList.remove("hidden");
+        }
+      }
+
+      // Initial icon state
+      updateIcons();
+
+      themeToggleBtn.addEventListener("click", function () {
+        // Toggle dark mode class on html tag
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("color-theme", "light");
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("color-theme", "dark");
+        }
+        updateIcons();
+      });
+    </script>
+    <button
+      aria-label="Back to top"
+      class="fixed bottom-8 right-8 z-[60] w-12 h-12 rounded-full bg-primary/90 hover:bg-primary text-white shadow-lg shadow-primary/20 flex items-center justify-center transition-all duration-300 translate-y-4 opacity-0 pointer-events-none hover:-translate-y-1 backdrop-blur-md border border-white/20 group"
+      id="back-to-top"
+    >
+      <span
+        class="material-symbols-outlined transition-transform group-hover:-translate-y-1"
+        >expand_less</span
+      >
+    </button>
+    <script>
+      (function () {
+        const backToTopBtn = document.getElementById("back-to-top");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            backToTopBtn.classList.remove(
+              "opacity-0",
+              "pointer-events-none",
+              "translate-y-4",
+            );
+            backToTopBtn.classList.add("opacity-100", "translate-y-0");
+          } else {
+            backToTopBtn.classList.add(
+              "opacity-0",
+              "pointer-events-none",
+              "translate-y-4",
+            );
+            backToTopBtn.classList.remove("opacity-100", "translate-y-0");
+          }
+        });
+
+        backToTopBtn.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>

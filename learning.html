@@ -1,0 +1,462 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Learning Journey | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#064c39",
+              "background-light": "#f6f8f7",
+              "background-dark": "#10221d",
+              "emerald-accent": "#10b981",
+              "sage-muted": "#92c9ba",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "1rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen"
+  >
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <!-- Glassmorphism Navbar -->
+      <header
+        class="sticky top-0 z-50 w-full border-b border-primary/20 bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4"
+      >
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="bg-primary p-2 rounded-lg">
+              <span class="material-symbols-outlined text-white text-xl"
+                >school</span
+              >
+            </div>
+            <h2 class="text-xl font-bold tracking-tight text-white">
+              Portfolio
+            </h2>
+          </div>
+          <nav class="hidden md:flex items-center gap-8">
+            <a
+              class="text-sage-muted hover:text-white text-sm font-medium transition-colors"
+              href="#"
+              >Home</a
+            >
+            <a
+              class="text-sage-muted hover:text-white text-sm font-medium transition-colors"
+              href="#"
+              >Projects</a
+            >
+            <a
+              class="text-white text-sm font-bold border-b-2 border-primary pb-1 transition-colors"
+              href="#"
+              >Learning</a
+            >
+            <a
+              class="text-sage-muted hover:text-white text-sm font-medium transition-colors"
+              href="#"
+              >About</a
+            >
+          </nav>
+          <div class="flex items-center gap-4">
+            <button
+              class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-emerald-800 transition-all"
+            >
+              Contact
+            </button>
+            <div
+              class="size-10 rounded-full border border-primary/30 bg-cover bg-center"
+              data-alt="User profile avatar portrait"
+              style="
+                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDPiwM7rVikzce7vcPyYzXGHPzMwuov0Mp_MjH4HIPndPUOrPn_DI-Oz1-Jawh50PV1M1Kudajn9XCatxIUb1MfL-DyhAVZmb0T5tx88mdrhsEa2qSxKnRnXbilHs_gOhR8mjtLHlJx5qN9rPsnoeTKW6f4b49Kmhdrw8c3g8PyHLpyp638co7h52wXGMUh0O3OSchFvxsmrANUCnMaCeps_9wod6c54vzIj6r4eKjEsZjuuo1_oJu3aFm6Ln5Om54eBZIDdZRAKEI&quot;);
+              "
+            ></div>
+          </div>
+        </div>
+      </header>
+      <main class="max-w-7xl mx-auto w-full px-6 md:px-20 py-12">
+        <!-- Page Header -->
+        <div class="mb-16">
+          <span
+            class="text-emerald-accent text-sm font-bold tracking-widest uppercase mb-2 block"
+            >Skill Acquisition</span
+          >
+          <h1
+            class="text-5xl md:text-6xl font-black text-white leading-tight mb-4"
+          >
+            Continuous Learning
+          </h1>
+          <p class="text-sage-muted text-lg max-w-2xl">
+            A curated track of technologies, design patterns, and systemic
+            methodologies I'm currently mastering or have recently added to my
+            toolkit.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <!-- Left Column: Main Content -->
+          <div class="lg:col-span-8 space-y-12">
+            <!-- Categories Tabs -->
+            <div class="flex flex-wrap gap-4 pb-6 border-b border-primary/20">
+              <button
+                class="px-6 py-2 rounded-full bg-primary text-white text-sm font-bold"
+              >
+                All Disciplines
+              </button>
+              <button
+                class="px-6 py-2 rounded-full bg-primary/10 text-sage-muted text-sm font-bold hover:bg-primary/20 transition-all"
+              >
+                Development
+              </button>
+              <button
+                class="px-6 py-2 rounded-full bg-primary/10 text-sage-muted text-sm font-bold hover:bg-primary/20 transition-all"
+              >
+                Design Systems
+              </button>
+              <button
+                class="px-6 py-2 rounded-full bg-primary/10 text-sage-muted text-sm font-bold hover:bg-primary/20 transition-all"
+              >
+                Business Strategy
+              </button>
+            </div>
+            <!-- Milestone Card 1 -->
+            <section class="group">
+              <div
+                class="relative overflow-hidden rounded-2xl bg-primary/5 border border-primary/10 p-1"
+              >
+                <div
+                  class="aspect-video w-full rounded-xl bg-cover bg-center"
+                  data-alt="Technical architectural diagram of microservices"
+                  style="
+                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBIm1eANmsnuAD8-u9F_Pfs9G7AZX-yg9pC9YGrTz9qT88VOJhwSwiKSm-Dv-bk5bCRwaiAcVyeor9hR99R1ezX7Rz5yrYPQgbGJwT1afDDq8R2PUNOmORoTq0_AHhi74pnUPhppd-DgzySXchmNdy51d3DDHDukZpywpcYtyu_8iJ0gq6jxPMHcgUwO62Q3bKUI6ZukdL1suo80Y_Ss3VL17izL54AAiOFsLQtYNw80keIndLKXdltxFp1J1LBtLM61o5JNuMiUD8&quot;);
+                  "
+                ></div>
+                <div class="p-8">
+                  <div class="flex items-center gap-3 mb-4">
+                    <span
+                      class="px-3 py-1 bg-emerald-accent/20 text-emerald-accent text-xs font-bold rounded-full uppercase tracking-wider"
+                      >Development</span
+                    >
+                    <span class="text-sage-muted text-xs font-medium"
+                      >Jan 2024 — Present</span
+                    >
+                  </div>
+                  <h3
+                    class="text-3xl font-bold text-white mb-4 group-hover:text-emerald-accent transition-colors"
+                  >
+                    Advanced Distributed Systems &amp; Microservices
+                  </h3>
+                  <p class="text-sage-muted leading-relaxed mb-6">
+                    Deep diving into the complexities of scaling applications.
+                    This milestone focuses on message brokers (Kafka/RabbitMQ),
+                    eventual consistency patterns, and container orchestration
+                    with Kubernetes.
+                  </p>
+                  <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                    <div class="flex items-center gap-2 text-white/80 text-sm">
+                      <span
+                        class="material-symbols-outlined text-primary text-base"
+                        >check_circle</span
+                      >
+                      Event Sourcing
+                    </div>
+                    <div class="flex items-center gap-2 text-white/80 text-sm">
+                      <span
+                        class="material-symbols-outlined text-primary text-base"
+                        >check_circle</span
+                      >
+                      gRPC &amp; Protocol Buffers
+                    </div>
+                    <div class="flex items-center gap-2 text-white/80 text-sm">
+                      <span
+                        class="material-symbols-outlined text-primary text-base"
+                        >check_circle</span
+                      >
+                      Service Mesh (Istio)
+                    </div>
+                  </div>
+                  <button
+                    class="flex items-center gap-2 bg-primary hover:bg-emerald-800 text-white font-bold py-3 px-6 rounded-xl transition-all"
+                  >
+                    <span>View Curriculum</span>
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                  </button>
+                </div>
+              </div>
+            </section>
+            <!-- Milestone Card 2 -->
+            <section class="group">
+              <div
+                class="relative overflow-hidden rounded-2xl bg-primary/5 border border-primary/10 p-1"
+              >
+                <div
+                  class="aspect-video w-full rounded-xl bg-cover bg-center"
+                  data-alt="Minimalist UI design system interface"
+                  style="
+                    background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDMhSLbdbJe1NohJdgh3uxfa8wZMj2IZRGueS17V77rYbdzY1uN9HIftsuQJUsAVBNmYNwSyTFthVEYGi97NYIaXcg4wIv-bprrE698xXmRUM5kiVYzbav15YXhQewvkwQfXK0i7PZE9lEyeq45933ZoHbNa0R7tVWt5wluMaFfkQgtaE2rZP04KvUiwHS-42gQZS9RIuwA6BvAk7B6jKSB2AAiH5zDdgqtZ1CH-HwpyjkSJ0eVj4V1WcL46ROdC0QX_HkucWlKDpQ&quot;);
+                  "
+                ></div>
+                <div class="p-8">
+                  <div class="flex items-center gap-3 mb-4">
+                    <span
+                      class="px-3 py-1 bg-blue-500/20 text-blue-400 text-xs font-bold rounded-full uppercase tracking-wider"
+                      >Design</span
+                    >
+                    <span class="text-sage-muted text-xs font-medium"
+                      >Sept 2023 — Dec 2023</span
+                    >
+                  </div>
+                  <h3
+                    class="text-3xl font-bold text-white mb-4 group-hover:text-emerald-accent transition-colors"
+                  >
+                    Product Design Strategy &amp; Systems
+                  </h3>
+                  <p class="text-sage-muted leading-relaxed mb-6">
+                    Exploring the intersection of business goals and user needs.
+                    Focused on creating scalable design languages using Figma
+                    variables and advanced prototyping techniques to bridge the
+                    gap between design and dev.
+                  </p>
+                  <div class="flex flex-wrap gap-2 mb-8">
+                    <span
+                      class="bg-primary/20 text-sage-muted px-4 py-1 rounded-lg text-xs font-medium border border-primary/30"
+                      >Atomic Design</span
+                    >
+                    <span
+                      class="bg-primary/20 text-sage-muted px-4 py-1 rounded-lg text-xs font-medium border border-primary/30"
+                      >Variable Tokens</span
+                    >
+                    <span
+                      class="bg-primary/20 text-sage-muted px-4 py-1 rounded-lg text-xs font-medium border border-primary/30"
+                      >User Psychology</span
+                    >
+                  </div>
+                  <button
+                    class="flex items-center gap-2 text-white border border-primary hover:bg-primary/10 font-bold py-3 px-6 rounded-xl transition-all"
+                  >
+                    <span class="material-symbols-outlined">verified</span>
+                    <span>Download Certificate</span>
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
+          <!-- Right Column: Sticky Timeline -->
+          <aside class="lg:col-span-4">
+            <div class="sticky top-28 space-y-8">
+              <div
+                class="p-6 rounded-2xl bg-primary/10 border border-primary/20"
+              >
+                <h4
+                  class="text-xl font-bold text-white mb-6 flex items-center gap-2"
+                >
+                  <span class="material-symbols-outlined text-emerald-accent"
+                    >timeline</span
+                  >
+                  Learning Roadmap
+                </h4>
+                <div
+                  class="space-y-0 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-primary/30"
+                >
+                  <!-- Timeline Item 1 -->
+                  <div class="relative pl-8 pb-10">
+                    <div
+                      class="absolute left-0 top-1 size-[24px] rounded-full bg-background-dark border-4 border-emerald-accent z-10"
+                    ></div>
+                    <p
+                      class="text-[10px] font-bold text-emerald-accent uppercase tracking-tighter mb-1"
+                    >
+                      In Progress
+                    </p>
+                    <h5 class="text-white font-bold text-sm">
+                      System Design Mastery
+                    </h5>
+                    <p class="text-sage-muted text-xs mt-1">
+                      Focusing on high-level architecture and scalability
+                      patterns.
+                    </p>
+                    <span
+                      class="inline-block mt-2 px-2 py-0.5 rounded bg-primary/20 text-sage-muted text-[10px] uppercase font-bold"
+                      >Backend</span
+                    >
+                  </div>
+                  <!-- Timeline Item 2 -->
+                  <div class="relative pl-8 pb-10">
+                    <div
+                      class="absolute left-0 top-1 size-[24px] rounded-full bg-background-dark border-4 border-primary/50 z-10"
+                    ></div>
+                    <p
+                      class="text-[10px] font-bold text-sage-muted uppercase tracking-tighter mb-1"
+                    >
+                      Coming Soon
+                    </p>
+                    <h5 class="text-white font-bold text-sm">
+                      Generative AI Integration
+                    </h5>
+                    <p class="text-sage-muted text-xs mt-1">
+                      Learning to build LLM-powered features into existing
+                      products.
+                    </p>
+                    <span
+                      class="inline-block mt-2 px-2 py-0.5 rounded bg-primary/20 text-sage-muted text-[10px] uppercase font-bold"
+                      >AI/ML</span
+                    >
+                  </div>
+                  <!-- Timeline Item 3 -->
+                  <div class="relative pl-8 pb-10">
+                    <div
+                      class="absolute left-0 top-1 size-[24px] rounded-full bg-primary z-10 flex items-center justify-center"
+                    >
+                      <span
+                        class="material-symbols-outlined text-white text-[12px] font-bold"
+                        >check</span
+                      >
+                    </div>
+                    <p
+                      class="text-[10px] font-bold text-sage-muted uppercase tracking-tighter mb-1"
+                    >
+                      Completed
+                    </p>
+                    <h5 class="text-white/60 font-bold text-sm line-through">
+                      Advanced Typescript
+                    </h5>
+                    <p class="text-sage-muted/60 text-xs mt-1">
+                      Mastered utility types, generics, and template literal
+                      types.
+                    </p>
+                    <span
+                      class="inline-block mt-2 px-2 py-0.5 rounded bg-primary/10 text-sage-muted/50 text-[10px] uppercase font-bold"
+                      >Frontend</span
+                    >
+                  </div>
+                  <!-- Timeline Item 4 -->
+                  <div class="relative pl-8">
+                    <div
+                      class="absolute left-0 top-1 size-[24px] rounded-full bg-primary z-10 flex items-center justify-center"
+                    >
+                      <span
+                        class="material-symbols-outlined text-white text-[12px] font-bold"
+                        >check</span
+                      >
+                    </div>
+                    <p
+                      class="text-[10px] font-bold text-sage-muted uppercase tracking-tighter mb-1"
+                    >
+                      Completed
+                    </p>
+                    <h5 class="text-white/60 font-bold text-sm line-through">
+                      Visual Storytelling
+                    </h5>
+                    <p class="text-sage-muted/60 text-xs mt-1">
+                      Course on communication and color theory.
+                    </p>
+                    <span
+                      class="inline-block mt-2 px-2 py-0.5 rounded bg-primary/10 text-sage-muted/50 text-[10px] uppercase font-bold"
+                      >Creative</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <!-- Current Reading/Resources -->
+              <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+                <h4 class="text-lg font-bold text-white mb-4">Reading List</h4>
+                <ul class="space-y-4">
+                  <li class="flex gap-4">
+                    <div
+                      class="size-12 rounded bg-primary/30 flex-shrink-0 flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined text-white/50"
+                        >auto_stories</span
+                      >
+                    </div>
+                    <div>
+                      <p class="text-white text-sm font-bold leading-snug">
+                        Designing Data-Intensive Applications
+                      </p>
+                      <p class="text-sage-muted text-xs">Martin Kleppmann</p>
+                    </div>
+                  </li>
+                  <li class="flex gap-4">
+                    <div
+                      class="size-12 rounded bg-primary/30 flex-shrink-0 flex items-center justify-center"
+                    >
+                      <span class="material-symbols-outlined text-white/50"
+                        >auto_stories</span
+                      >
+                    </div>
+                    <div>
+                      <p class="text-white text-sm font-bold leading-snug">
+                        Refactoring UI
+                      </p>
+                      <p class="text-sage-muted text-xs">
+                        Adam Wathan &amp; Steve Schoger
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </main>
+      <footer
+        class="mt-24 border-t border-primary/20 bg-background-dark py-12 px-6 md:px-20"
+      >
+        <div
+          class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+        >
+          <div class="flex items-center gap-3">
+            <div class="size-6 bg-primary rounded"></div>
+            <span class="text-white font-bold tracking-tight"
+              >Learning Journal © 2024</span
+            >
+          </div>
+          <div class="flex gap-8">
+            <a
+              class="text-sage-muted hover:text-white transition-colors"
+              href="#"
+              ><span class="material-symbols-outlined">public</span></a
+            >
+            <a
+              class="text-sage-muted hover:text-white transition-colors"
+              href="#"
+              ><span class="material-symbols-outlined">terminal</span></a
+            >
+            <a
+              class="text-sage-muted hover:text-white transition-colors"
+              href="#"
+              ><span class="material-symbols-outlined">brand_awareness</span></a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

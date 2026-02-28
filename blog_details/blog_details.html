@@ -1,0 +1,487 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#064c39",
+              "background-light": "#f6f8f7",
+              "background-dark": "#10221d",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-nav {
+        background: rgba(16, 34, 29, 0.7);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(6, 76, 57, 0.3);
+      }
+      .code-block {
+        background: rgba(6, 76, 57, 0.1);
+        border: 1px solid rgba(6, 76, 57, 0.2);
+      }
+      .emerald-gradient {
+        background: linear-gradient(
+          180deg,
+          rgba(16, 34, 29, 0) 0%,
+          rgba(16, 34, 29, 0.9) 100%
+        );
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased selection:bg-primary/30 selection:text-primary-foreground"
+  >
+    <!-- Reading Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 z-[100] bg-primary/10">
+      <div class="h-full bg-primary" style="width: 35%"></div>
+    </div>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-[90] glass-nav">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center gap-3">
+            <div class="text-primary">
+              <span class="material-symbols-outlined text-3xl">terminal</span>
+            </div>
+            <span
+              class="text-xl font-extrabold tracking-tight dark:text-slate-100"
+              >DevPort</span
+            >
+          </div>
+          <div class="hidden md:flex items-center gap-8">
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Articles</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >Projects</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary transition-colors"
+              href="#"
+              >About</a
+            >
+            <button
+              class="bg-primary/20 text-primary px-4 py-2 rounded-lg text-sm font-bold border border-primary/30 hover:bg-primary/30 transition-all"
+            >
+              Hire Me
+            </button>
+          </div>
+          <div class="flex items-center gap-4">
+            <button class="p-2 rounded-lg hover:bg-primary/10">
+              <span class="material-symbols-outlined">search</span>
+            </button>
+            <div
+              class="w-8 h-8 rounded-full bg-primary/20 border border-primary/30 flex items-center justify-center overflow-hidden"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="Senior engineer professional profile headshot"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiiSqS6JrgqklyA5G5NGYf6Qq5o_hs6Rti1knPnQds-8u23ggWaCajGwD8hfMXCYUsp3sab9OzIUAlDXSVpScVTVqmIMkTTb8ppHeZEp6sTkDEgKyAH9peeR9fXIbjZ3S8iHqPFQLGjMwWDMUh3FMBf9z-cO-1K4NwMEiJbBc1O2cp5JYi4MWqkyIMWIsvJ1IMEEgwWRDGH72T1At4bSB2a6vgmwna9JVjc4bHhoIF-vpxpXqFXP3S5OmhJGodib9MWJ4LAENXGnc"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="relative pt-32 pb-20 overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="max-w-4xl">
+          <div
+            class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 text-xs font-bold uppercase tracking-wider mb-6"
+          >
+            <span class="material-symbols-outlined text-sm">bolt</span>
+            Engineering
+          </div>
+          <h1
+            class="text-4xl md:text-6xl font-extrabold leading-tight mb-8 dark:text-white"
+          >
+            High-Performance Rendering in
+            <span class="text-emerald-500">React</span> and Framer Motion
+          </h1>
+          <div
+            class="flex flex-wrap items-center gap-6 text-slate-500 dark:text-slate-400"
+          >
+            <div class="flex items-center gap-3">
+              <img
+                class="w-10 h-10 rounded-full border-2 border-primary/30"
+                data-alt="Author profile avatar"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSxwq7jGm2vKAfr2f0ns-5TQfuSoLwAdEPVUg_li6tPr9IlSxlJ_IYIzzLPWNnWqAvh1ZFY6RfgemZO2yb7d63TljrknZY1iRNVSUnRGvtjbm4xeC07CXpbdAguqdKWGtMR4zkPJqqsUUGBaALekA7AoglnUObssBBxp0qls2zmu_hXtEzNubz2oVR0Y_Un6ix3AIxOSn7SYXeOMl_OqjHiaRwFlCTP-6r66WVoSTaZdEsYueqbx7J6mLormkb5TX-8Owqzr4oB7E"
+              />
+              <div>
+                <p class="text-sm font-bold text-slate-900 dark:text-slate-100">
+                  Alex Rivers
+                </p>
+                <p class="text-xs">Senior Software Engineer</p>
+              </div>
+            </div>
+            <div class="h-4 w-px bg-slate-200 dark:bg-slate-800"></div>
+            <div class="flex items-center gap-2 text-sm">
+              <span class="material-symbols-outlined text-sm"
+                >calendar_today</span
+              >
+              Oct 24, 2023
+            </div>
+            <div class="flex items-center gap-2 text-sm">
+              <span class="material-symbols-outlined text-sm">schedule</span>
+              12 min read
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Decorative Background Element -->
+      <div
+        class="absolute top-0 right-0 -translate-y-1/4 translate-x-1/4 w-[600px] h-[600px] bg-primary/10 blur-[120px] rounded-full pointer-events-none"
+      ></div>
+    </header>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <div
+        class="relative w-full aspect-video rounded-2xl overflow-hidden mb-16 shadow-2xl shadow-primary/10"
+      >
+        <img
+          class="w-full h-full object-cover"
+          data-alt="High quality code editor screenshot showing modern UI logic"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvrgNP-XBFqxaMzv48PV-NV6Dx-yKz3__3iod0CP-vQzTU0rqfrL1GKfPu4-Gpddq75AGwd_DBYbgKhs487R0KoM10TbLCh82BWPknSB3yHmKq_K3YFdLgxTQHekRtshjbatNjthbYyvY5gxEmfUa7xyPK0P-gxSV3aMpt5QgMjPymCj9PcQ0RVLofa79hFMQgXQL1G5yeE87ySBcOWrEnGXEv5OwoQlTX6DWtDTXt6s8wM_zoDNkal-4TjxoAiXX4_Afjj8sYOoQ"
+        />
+        <div
+          class="absolute inset-0 emerald-gradient pointer-events-none"
+        ></div>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-12">
+        <!-- Content Sidebar (Left - Desktop) -->
+        <aside class="lg:w-64 flex-shrink-0">
+          <div class="sticky top-24 space-y-8">
+            <div>
+              <h4
+                class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4"
+              >
+                Table of Contents
+              </h4>
+              <ul class="space-y-3">
+                <li>
+                  <a
+                    class="text-sm font-medium text-primary flex items-center gap-2"
+                    href="#intro"
+                    ><span class="w-1 h-1 rounded-full bg-primary"></span
+                    >Introduction</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm font-medium text-slate-500 hover:text-primary transition-colors"
+                    href="#bottlenecks"
+                    >Performance Bottlenecks</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm font-medium text-slate-500 hover:text-primary transition-colors"
+                    href="#memoization"
+                    >Memoization Strategies</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm font-medium text-slate-500 hover:text-primary transition-colors"
+                    href="#framer"
+                    >Framer Motion Optimization</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="text-sm font-medium text-slate-500 hover:text-primary transition-colors"
+                    href="#benchmarks"
+                    >Benchmarks</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4
+                class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-4"
+              >
+                Share Article
+              </h4>
+              <div class="flex gap-2">
+                <button
+                  class="p-2 rounded-lg bg-primary/10 border border-primary/20 hover:bg-primary/20 transition-all"
+                >
+                  <span class="material-symbols-outlined text-xl">share</span>
+                </button>
+                <button
+                  class="p-2 rounded-lg bg-primary/10 border border-primary/20 hover:bg-primary/20 transition-all"
+                >
+                  <span class="material-symbols-outlined text-xl"
+                    >content_copy</span
+                  >
+                </button>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <!-- Main Article Content -->
+        <article class="flex-1 max-w-3xl">
+          <div
+            class="prose prose-lg dark:prose-invert prose-emerald max-w-none"
+          >
+            <p
+              class="text-xl leading-relaxed text-slate-600 dark:text-slate-300 mb-8"
+            >
+              In the landscape of modern web development, performance isn't just
+              a feature—it's the foundation. As React applications scale,
+              complex UI interactions and animations can quickly become a burden
+              on the main thread if not managed with precision.
+            </p>
+            <h2 class="text-3xl font-bold mb-6" id="intro">
+              Introduction to React Fiber
+            </h2>
+            <p class="mb-6">
+              React's reconciliation process is powerful, but understanding how
+              Fiber handles updates is crucial for high-performance rendering.
+              When we introduce heavy animations through libraries like Framer
+              Motion, we need to ensure our component lifecycle is optimized to
+              prevent unnecessary re-renders.
+            </p>
+            <div
+              class="code-block rounded-xl p-6 my-10 font-mono text-sm overflow-x-auto relative group"
+            >
+              <div
+                class="absolute top-4 right-4 text-xs text-primary font-bold"
+              >
+                TYPESCRIPT
+              </div>
+              <pre
+                class="text-emerald-400"
+              ><span class="text-purple-400">const</span> OptimizedComponent = <span class="text-blue-400">memo</span>(({ data }) =&gt; {
+  <span class="text-purple-400">const</span> springConfig = <span class="text-blue-400">useSpring</span>({
+    stiffness: <span class="text-orange-400">100</span>,
+    damping: <span class="text-orange-400">30</span>
+  });
+
+  <span class="text-purple-400">return</span> (
+    &lt;<span class="text-emerald-500">motion.div</span> animate={{ scale: <span class="text-orange-400">1.1</span> }}&gt;
+      {data.label}
+    &lt;/<span class="text-emerald-500">motion.div</span>&gt;
+  );
+});</pre>
+            </div>
+            <h2 class="text-3xl font-bold mb-6" id="bottlenecks">
+              Performance Bottlenecks
+            </h2>
+            <p class="mb-6">
+              One of the most common issues engineers face is the "Prop-Drilling
+              Animation" anti-pattern. Passing large objects through many layers
+              of components triggers re-renders across the entire tree, even for
+              components that only need a small slice of that data.
+            </p>
+            <blockquote
+              class="border-l-4 border-primary pl-6 py-4 italic bg-primary/5 rounded-r-lg my-10"
+            >
+              "The fastest animation is the one you don't have to re-render the
+              whole DOM for."
+            </blockquote>
+            <h2 class="text-3xl font-bold mb-6" id="memoization">
+              Memoization Strategies
+            </h2>
+            <p class="mb-6">
+              Using
+              <code class="bg-primary/10 text-primary px-1.5 py-0.5 rounded"
+                >useMemo</code
+              >
+              and
+              <code class="bg-primary/10 text-primary px-1.5 py-0.5 rounded"
+                >useCallback</code
+              >
+              is often the first line of defense, but over-memoizing can lead to
+              its own performance overhead. Balance is key.
+            </p>
+            <hr class="border-slate-200 dark:border-slate-800 my-12" />
+            <div class="flex items-center justify-between py-6">
+              <div class="flex gap-2">
+                <span
+                  class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-medium"
+                  >#react</span
+                >
+                <span
+                  class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-medium"
+                  >#performance</span
+                >
+                <span
+                  class="px-3 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-xs font-medium"
+                  >#webdev</span
+                >
+              </div>
+              <div class="flex items-center gap-4">
+                <button class="flex items-center gap-2 text-primary">
+                  <span class="material-symbols-outlined fill-1">favorite</span>
+                  <span class="text-sm font-bold">1.2k</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Newsletter -->
+          <div
+            class="mt-20 p-8 rounded-2xl bg-primary/10 border border-primary/20 relative overflow-hidden"
+          >
+            <div class="relative z-10">
+              <h3 class="text-2xl font-bold mb-2">
+                Want more engineering insights?
+              </h3>
+              <p class="text-slate-400 mb-6 max-w-md">
+                Join 5,000+ developers receiving weekly deep-dives into React,
+                System Design, and Frontend Architecture.
+              </p>
+              <form class="flex flex-col sm:flex-row gap-3">
+                <input
+                  class="flex-1 bg-background-dark/50 border-primary/30 rounded-lg px-4 py-3 focus:ring-primary focus:border-primary"
+                  placeholder="Enter your email"
+                  type="email"
+                />
+                <button
+                  class="bg-primary hover:bg-primary/90 text-white font-bold py-3 px-6 rounded-lg transition-colors"
+                  type="submit"
+                >
+                  Subscribe
+                </button>
+              </form>
+            </div>
+            <span
+              class="material-symbols-outlined absolute -bottom-4 -right-4 text-[120px] opacity-10 rotate-12"
+              >mail</span
+            >
+          </div>
+        </article>
+      </div>
+    </main>
+    <!-- Related Posts -->
+    <section
+      class="bg-slate-50 dark:bg-black/20 border-t border-slate-200 dark:border-slate-800 py-20"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold mb-12">Related Articles</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Post 1 -->
+          <div class="group cursor-pointer">
+            <div class="relative aspect-video rounded-xl overflow-hidden mb-4">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="Abstract 3D geometric shapes with soft lighting"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj2-aHoHf8bkYfTSgI6A54c4Lp3n4UwqfYA-WP-eJePp8VVXvXdaYJLDutOFvJOjypMyUVlCosUlJvzmjgMTEw1qgBmNHoUJdbiVMhvHuvg9w3mBWAAwoJT82jx8W--pt0EUxvIDujmRLyYadGu449TPuQdx25ZBsgOT0_p1UFNfZbI5xAwdUuVYUp6ArQDV1oHivPVlujfffyofF0FCg1dT1yi9aPh0LnYZupP0FLNxdOqT-f-JlXNe1Nn1jygNMLpwClvWCXl6U"
+              />
+            </div>
+            <p class="text-primary text-xs font-bold uppercase mb-2">
+              Architecture
+            </p>
+            <h3
+              class="text-lg font-bold group-hover:text-primary transition-colors mb-2"
+            >
+              Building Scalable Design Systems with Tailwind
+            </h3>
+            <p class="text-sm text-slate-500 line-clamp-2">
+              How to architect a multi-brand design system using modern CSS
+              utilities and variables.
+            </p>
+          </div>
+          <!-- Post 2 -->
+          <div class="group cursor-pointer">
+            <div class="relative aspect-video rounded-xl overflow-hidden mb-4">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="React logo icon on a dark high-tech background"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLBGTpTA2Qsj5AX0uO-Bh59ONyrgoyGUGkA3GRwUS3v_-n9ilzcM1OTjiAnt08JqozfJjOdgla1A2POYGfTPpKnbmoYmSyZqwWeCwbyInwt9tyW3X7gZvgao3br5Ym_jbbX0Aw6hNzrFJkYcOaWoalHJKH8IbmlY06q6oM9hMcufSpJvdslbvbFFLYrM6-PSjclOPhBN_CIQcToAFCD3M_77uCnylXN4yoQ14DNQ6zJq_BVgaErcqTuYGSJJZdwGGSnXEaA70DpJA"
+              />
+            </div>
+            <p class="text-primary text-xs font-bold uppercase mb-2">React</p>
+            <h3
+              class="text-lg font-bold group-hover:text-primary transition-colors mb-2"
+            >
+              The Future of Server Components
+            </h3>
+            <p class="text-sm text-slate-500 line-clamp-2">
+              Breaking down the benefits of RSC and why it's a paradigm shift
+              for full-stack developers.
+            </p>
+          </div>
+          <!-- Post 3 -->
+          <div class="group cursor-pointer">
+            <div class="relative aspect-video rounded-xl overflow-hidden mb-4">
+              <img
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                data-alt="Cyberpunk aesthetic computer hardware parts"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEFctjm6znZFBnzUE6omBtMkdjzpgkNArYROXl71aDMqSbvyh3vKcpbi_PeflTqoLjKWM-XyRkNKGo2QoEETg1E0VJX9VkH9du1LNDzzooK-KXyXyVBPjIA9szYivp4K2xU3VC_Br7T4irXupa8AmwX5x2HvBRSfXFRzPaQUhJn-jKUNel6TNHiihpBjVTZ1TSAiINYuKlyEZLpzkAXhDFnkjf3XXWg2hUkaXuGcKqYm60ZGTPUQ1gTKy945UwniNuUc8yQqKnfMc"
+              />
+            </div>
+            <p class="text-primary text-xs font-bold uppercase mb-2">DevOps</p>
+            <h3
+              class="text-lg font-bold group-hover:text-primary transition-colors mb-2"
+            >
+              Optimizing CI/CD for Monorepos
+            </h3>
+            <p class="text-sm text-slate-500 line-clamp-2">
+              A practical guide to TurboRepo and Nx for managing massive scale
+              codebases efficiently.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-200 dark:border-slate-800">
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <div class="flex items-center gap-3">
+          <div class="text-primary">
+            <span class="material-symbols-outlined text-3xl">terminal</span>
+          </div>
+          <span class="text-lg font-bold">DevPort</span>
+        </div>
+        <div class="flex gap-8 text-sm text-slate-500 font-medium">
+          <a class="hover:text-primary transition-colors" href="#">GitHub</a>
+          <a class="hover:text-primary transition-colors" href="#">Twitter</a>
+          <a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
+          <a class="hover:text-primary transition-colors" href="#">RSS Feed</a>
+        </div>
+        <p class="text-sm text-slate-500">
+          © 2023 Rivers Engineering. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

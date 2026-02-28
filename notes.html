@@ -1,0 +1,532 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>DevNotes - Engineering Resources</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#064c39",
+              "background-light": "#f6f8f7",
+              "background-dark": "#0a1210",
+              "accent-sage": "#92c9ba",
+              "glass-border": "rgba(146, 201, 186, 0.1)",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .glass-effect {
+        backdrop-filter: blur(12px);
+        background-color: rgba(16, 34, 29, 0.7);
+        border: 1px solid rgba(146, 201, 186, 0.1);
+      }
+      .card-hover:hover {
+        border-color: rgba(146, 201, 186, 0.3);
+        transform: translateY(-2px);
+        transition: all 0.3s ease;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen"
+  >
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+      <!-- Top Navigation -->
+      <header
+        class="sticky top-0 z-50 glass-effect border-b border-glass-border px-6 md:px-20 py-4"
+      >
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+          <div class="flex items-center gap-8">
+            <div
+              class="flex items-center gap-3 text-primary dark:text-accent-sage"
+            >
+              <div
+                class="size-8 bg-primary/20 rounded-lg flex items-center justify-center"
+              >
+                <span class="material-symbols-outlined text-2xl">database</span>
+              </div>
+              <h2 class="text-xl font-extrabold tracking-tight">DevNotes</h2>
+            </div>
+            <nav class="hidden md:flex items-center gap-6">
+              <a
+                class="text-sm font-medium opacity-70 hover:opacity-100 transition-opacity"
+                href="#"
+                >Portfolio</a
+              >
+              <a
+                class="text-sm font-medium opacity-70 hover:opacity-100 transition-opacity"
+                href="#"
+                >Projects</a
+              >
+              <a
+                class="text-sm font-medium text-primary dark:text-accent-sage"
+                href="#"
+                >Notes</a
+              >
+              <a
+                class="text-sm font-medium opacity-70 hover:opacity-100 transition-opacity"
+                href="#"
+                >About</a
+              >
+            </nav>
+          </div>
+          <div class="flex items-center gap-4">
+            <div
+              class="hidden lg:flex items-center glass-effect rounded-lg px-3 py-1.5 gap-2 border border-glass-border"
+            >
+              <span class="material-symbols-outlined text-accent-sage text-xl"
+                >search</span
+              >
+              <input
+                class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-accent-sage/50"
+                placeholder="Quick search..."
+                type="text"
+              />
+              <span
+                class="text-[10px] border border-glass-border rounded px-1.5 py-0.5 opacity-50"
+                >CMD K</span
+              >
+            </div>
+            <button
+              class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-colors"
+            >
+              Contact
+            </button>
+            <div
+              class="size-10 rounded-full border-2 border-primary/30 overflow-hidden"
+            >
+              <img
+                class="w-full h-full object-cover"
+                data-alt="Professional developer portrait avatar"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDlcPVs6Cu9hJB0SH8YF6MnAlNpNTx0YVJ-DH-DL8ZHZ7Akj_oNoWPoMBq3wLzkKZAQKJTHoME6fzUgLvBhls98nobSzebUyLJBcqFNWKYgzujLSsfE4M0Uds4l09y56HETwWaVc5ddMn9qQulBo1VOLOxFy2z8ZtteyNEJWMVsdbr1WcQbRBAHoMZNsQpwth-CdVOzN0s9ojkTEwylfxXpLK6y6864TtNe9NfJLDiojPJhl-pDCm4_rUI0WzXQXW6g1aIxIT4g0k"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="max-w-7xl mx-auto px-6 md:px-20 py-12 w-full">
+        <!-- Hero Section -->
+        <div class="mb-12">
+          <h1
+            class="text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r from-white to-accent-sage bg-clip-text text-transparent"
+          >
+            Engineering Resources
+          </h1>
+          <p class="text-slate-400 text-lg max-w-2xl leading-relaxed">
+            A curated collection of technical deep-dives, architectural
+            patterns, and reusable code snippets from my journey as a full-stack
+            engineer.
+          </p>
+        </div>
+        <!-- Search and Filter Bar -->
+        <div
+          class="flex flex-col md:flex-row gap-6 mb-12 items-center justify-between"
+        >
+          <div class="w-full md:max-w-md">
+            <div class="relative group">
+              <span
+                class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-accent-sage group-focus-within:text-white transition-colors"
+                >search</span
+              >
+              <input
+                class="w-full pl-12 pr-4 py-4 rounded-xl glass-effect focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all"
+                placeholder="Search resources, topics, or keywords..."
+                type="text"
+              />
+            </div>
+          </div>
+          <div
+            class="flex items-center gap-2 overflow-x-auto pb-2 w-full md:w-auto scrollbar-hide"
+          >
+            <button
+              class="px-5 py-2 rounded-full bg-primary text-white text-sm font-semibold whitespace-nowrap"
+            >
+              All Notes
+            </button>
+            <button
+              class="px-5 py-2 rounded-full glass-effect hover:bg-primary/20 text-sm font-medium whitespace-nowrap transition-colors"
+            >
+              React
+            </button>
+            <button
+              class="px-5 py-2 rounded-full glass-effect hover:bg-primary/20 text-sm font-medium whitespace-nowrap transition-colors"
+            >
+              Node.js
+            </button>
+            <button
+              class="px-5 py-2 rounded-full glass-effect hover:bg-primary/20 text-sm font-medium whitespace-nowrap transition-colors"
+            >
+              System Design
+            </button>
+            <button
+              class="px-5 py-2 rounded-full glass-effect hover:bg-primary/20 text-sm font-medium whitespace-nowrap transition-colors"
+            >
+              SQL
+            </button>
+            <button
+              class="px-5 py-2 rounded-full glass-effect hover:bg-primary/20 text-sm font-medium whitespace-nowrap transition-colors"
+            >
+              TypeScript
+            </button>
+          </div>
+        </div>
+        <!-- Notes Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div
+            class="group glass-effect rounded-2xl p-6 card-hover flex flex-col relative overflow-hidden"
+          >
+            <div class="absolute top-0 right-0 p-4">
+              <span
+                class="bg-primary text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded text-white"
+                >New</span
+              >
+            </div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="material-symbols-outlined text-accent-sage text-sm"
+                >calendar_today</span
+              >
+              <span class="text-xs font-medium text-slate-500"
+                >Oct 24, 2023</span
+              >
+              <span class="mx-1 text-slate-700">•</span>
+              <span
+                class="text-xs font-bold text-accent-sage uppercase tracking-wider"
+                >System Design</span
+              >
+            </div>
+            <h3
+              class="text-xl font-bold mb-3 group-hover:text-accent-sage transition-colors leading-tight"
+            >
+              Scalable WebSocket Architecture with Redis
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              Exploring horizontal scaling strategies for real-time applications
+              using Redis Pub/Sub and sticky sessions in a microservices
+              environment.
+            </p>
+            <div
+              class="flex items-center justify-between pt-4 border-t border-glass-border"
+            >
+              <div class="flex -space-x-2">
+                <div
+                  class="size-6 rounded-full bg-primary/40 border border-glass-border flex items-center justify-center text-[10px] font-bold"
+                >
+                  JS
+                </div>
+                <div
+                  class="size-6 rounded-full bg-blue-500/40 border border-glass-border flex items-center justify-center text-[10px] font-bold"
+                >
+                  RD
+                </div>
+              </div>
+              <a
+                class="flex items-center gap-1 text-sm font-bold text-accent-sage hover:gap-2 transition-all"
+                href="#"
+              >
+                Read Note
+                <span class="material-symbols-outlined text-base"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="group glass-effect rounded-2xl p-6 card-hover flex flex-col relative overflow-hidden"
+          >
+            <div class="flex items-center gap-2 mb-4">
+              <span class="material-symbols-outlined text-accent-sage text-sm"
+                >calendar_today</span
+              >
+              <span class="text-xs font-medium text-slate-500"
+                >Oct 15, 2023</span
+              >
+              <span class="mx-1 text-slate-700">•</span>
+              <span
+                class="text-xs font-bold text-accent-sage uppercase tracking-wider"
+                >React</span
+              >
+            </div>
+            <h3
+              class="text-xl font-bold mb-3 group-hover:text-accent-sage transition-colors leading-tight"
+            >
+              React Server Components: A Deep Dive
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              Understanding the mental model shift required for RSCs, data
+              fetching patterns, and the zero-bundle-size impact on client
+              performance.
+            </p>
+            <div
+              class="flex items-center justify-between pt-4 border-t border-glass-border"
+            >
+              <div class="flex -space-x-2">
+                <div
+                  class="size-6 rounded-full bg-cyan-500/40 border border-glass-border flex items-center justify-center text-[10px] font-bold"
+                >
+                  RE
+                </div>
+                <div
+                  class="size-6 rounded-full bg-white/10 border border-glass-border flex items-center justify-center text-[10px] font-bold"
+                >
+                  NX
+                </div>
+              </div>
+              <a
+                class="flex items-center gap-1 text-sm font-bold text-accent-sage hover:gap-2 transition-all"
+                href="#"
+              >
+                Read Note
+                <span class="material-symbols-outlined text-base"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="group glass-effect rounded-2xl p-6 card-hover flex flex-col relative overflow-hidden"
+          >
+            <div class="absolute top-0 right-0 p-4">
+              <span
+                class="bg-accent-sage/20 border border-accent-sage/30 text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded text-accent-sage"
+                >Updated</span
+              >
+            </div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="material-symbols-outlined text-accent-sage text-sm"
+                >calendar_today</span
+              >
+              <span class="text-xs font-medium text-slate-500"
+                >Sep 28, 2023</span
+              >
+              <span class="mx-1 text-slate-700">•</span>
+              <span
+                class="text-xs font-bold text-accent-sage uppercase tracking-wider"
+                >SQL</span
+              >
+            </div>
+            <h3
+              class="text-xl font-bold mb-3 group-hover:text-accent-sage transition-colors leading-tight"
+            >
+              Advanced Indexing &amp; Query Optimization
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              Going beyond simple B-Trees. Exploring GIN, BRIN indexes and how
+              to read EXPLAIN ANALYZE output for complex PostgreSQL queries.
+            </p>
+            <div
+              class="flex items-center justify-between pt-4 border-t border-glass-border"
+            >
+              <div class="flex -space-x-2">
+                <div
+                  class="size-6 rounded-full bg-blue-600/40 border border-glass-border flex items-center justify-center text-[10px] font-bold"
+                >
+                  PG
+                </div>
+                <div
+                  class="size-6 rounded-full bg-orange-500/40 border border-glass-border flex items-center justify-center text-[10px] font-bold"
+                >
+                  SQL
+                </div>
+              </div>
+              <a
+                class="flex items-center gap-1 text-sm font-bold text-accent-sage hover:gap-2 transition-all"
+                href="#"
+              >
+                Read Note
+                <span class="material-symbols-outlined text-base"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="group glass-effect rounded-2xl p-6 card-hover flex flex-col relative overflow-hidden"
+          >
+            <div class="flex items-center gap-2 mb-4">
+              <span class="material-symbols-outlined text-accent-sage text-sm"
+                >calendar_today</span
+              >
+              <span class="text-xs font-medium text-slate-500"
+                >Sep 12, 2023</span
+              >
+              <span class="mx-1 text-slate-700">•</span>
+              <span
+                class="text-xs font-bold text-accent-sage uppercase tracking-wider"
+                >Node.js</span
+              >
+            </div>
+            <h3
+              class="text-xl font-bold mb-3 group-hover:text-accent-sage transition-colors leading-tight"
+            >
+              Event Loop Architecture &amp; Libuv
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              A low-level look at how Node.js handles asynchronous I/O and why
+              blocking the event loop is detrimental to high-throughput apps.
+            </p>
+            <div
+              class="flex items-center justify-between pt-4 border-t border-glass-border"
+            >
+              <div class="flex -space-x-2">
+                <div
+                  class="size-6 rounded-full bg-green-500/40 border border-glass-border flex items-center justify-center text-[10px] font-bold"
+                >
+                  JS
+                </div>
+              </div>
+              <a
+                class="flex items-center gap-1 text-sm font-bold text-accent-sage hover:gap-2 transition-all"
+                href="#"
+              >
+                Read Note
+                <span class="material-symbols-outlined text-base"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </div>
+          <!-- Card 5 -->
+          <div
+            class="group glass-effect rounded-2xl p-6 card-hover flex flex-col relative overflow-hidden"
+          >
+            <div class="flex items-center gap-2 mb-4">
+              <span class="material-symbols-outlined text-accent-sage text-sm"
+                >calendar_today</span
+              >
+              <span class="text-xs font-medium text-slate-500"
+                >Aug 30, 2023</span
+              >
+              <span class="mx-1 text-slate-700">•</span>
+              <span
+                class="text-xs font-bold text-accent-sage uppercase tracking-wider"
+                >TypeScript</span
+              >
+            </div>
+            <h3
+              class="text-xl font-bold mb-3 group-hover:text-accent-sage transition-colors leading-tight"
+            >
+              Mastering Generics &amp; Conditional Types
+            </h3>
+            <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
+              Building bulletproof utility types for large-scale applications.
+              Making your code truly type-safe with advanced TypeScript
+              patterns.
+            </p>
+            <div
+              class="flex items-center justify-between pt-4 border-t border-glass-border"
+            >
+              <div class="flex -space-x-2">
+                <div
+                  class="size-6 rounded-full bg-blue-400/40 border border-glass-border flex items-center justify-center text-[10px] font-bold"
+                >
+                  TS
+                </div>
+              </div>
+              <a
+                class="flex items-center gap-1 text-sm font-bold text-accent-sage hover:gap-2 transition-all"
+                href="#"
+              >
+                Read Note
+                <span class="material-symbols-outlined text-base"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+          </div>
+          <!-- Card 6 -->
+          <div
+            class="group glass-effect rounded-2xl p-6 card-hover flex flex-col relative overflow-hidden border-dashed border-2 border-primary/20 bg-transparent flex items-center justify-center text-center cursor-pointer"
+          >
+            <div class="p-8">
+              <div
+                class="size-12 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-4"
+              >
+                <span class="material-symbols-outlined text-accent-sage"
+                  >add</span
+                >
+              </div>
+              <p class="text-slate-400 font-medium">Request a Topic</p>
+              <p class="text-xs text-slate-600 mt-2">
+                Is there something you'd like to see covered? Let me know.
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- Pagination/Footer -->
+        <div class="mt-20 flex flex-col items-center gap-6">
+          <button
+            class="flex items-center gap-2 glass-effect px-8 py-3 rounded-xl font-bold hover:bg-primary/10 transition-colors"
+          >
+            Load More Resources
+            <span class="material-symbols-outlined">expand_more</span>
+          </button>
+          <div class="text-slate-500 text-sm">
+            Showing 5 of 42 technical notes
+          </div>
+        </div>
+      </main>
+      <footer class="border-t border-glass-border mt-20 py-12 px-6 md:px-20">
+        <div
+          class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8"
+        >
+          <div class="flex items-center gap-3 text-slate-400">
+            <span class="material-symbols-outlined">copyright</span>
+            <span class="text-sm"
+              >2023 DevNotes by John Doe. Built with React &amp; Tailwind.</span
+            >
+          </div>
+          <div class="flex items-center gap-6">
+            <a
+              class="text-slate-400 hover:text-accent-sage transition-colors"
+              href="#"
+              ><span class="material-symbols-outlined">brand_family</span></a
+            >
+            <a
+              class="text-slate-400 hover:text-accent-sage transition-colors"
+              href="#"
+              ><span class="material-symbols-outlined">alternate_email</span></a
+            >
+            <a
+              class="text-slate-400 hover:text-accent-sage transition-colors"
+              href="#"
+              ><span class="material-symbols-outlined">rss_feed</span></a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

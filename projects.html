@@ -1,0 +1,523 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Projects | Developer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#064c39",
+              "background-light": "#f6f8f7",
+              "background-dark": "#10221d",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .glass {
+        background: rgba(6, 76, 57, 0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(6, 76, 57, 0.2);
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(6, 76, 57, 0.3);
+      }
+    </style>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen"
+  >
+    <nav class="sticky top-0 z-50 w-full glass border-b border-primary/20">
+      <div
+        class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white"
+          >
+            <span class="material-symbols-outlined text-xl">terminal</span>
+          </div>
+          <span
+            class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100"
+            >Portfolio</span
+          >
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="#"
+            >Home</a
+          >
+          <a
+            class="text-sm font-medium text-primary underline underline-offset-8"
+            href="#"
+            >Projects</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="#"
+            >About</a
+          >
+          <a
+            class="text-sm font-medium hover:text-primary transition-colors"
+            href="#"
+            >Contact</a
+          >
+        </div>
+        <div class="flex items-center gap-3">
+          <button
+            class="p-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
+          >
+            <span class="material-symbols-outlined">brand_awareness</span>
+          </button>
+          <div
+            class="w-10 h-10 rounded-full bg-primary/30 border border-primary/50 overflow-hidden"
+          >
+            <img
+              class="w-full h-full object-cover"
+              data-alt="Professional headshot of a developer"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6-KqoxZm8QBQWHEWfhXTSlULleG3nswo2HOeZ2d8AX2oAFQZQE7vi-jTkZDp1HB1lFQK5moqY7G9pPGaY7EuTquC1v9eb1fGyLj3dpRHu9K8EHlWe9oRoiefqhYhSG1Oluj-aSk73guOi9jBSq2S0awoj_hgtDwm3NhtOt_O-75z1FKWSeZlwX431GFkzwt57TCzpjfdn-jeSVFZ5lIqrhA72KWLU3Rwb4QEFRZtlBOr8JZHeYsDZrPqPdnaXvfygjlOCzlYPiWo"
+            />
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="max-w-7xl mx-auto px-6 py-12">
+      <header class="mb-12">
+        <h1
+          class="text-5xl font-black text-slate-900 dark:text-slate-50 mb-4 tracking-tight"
+        >
+          Projects
+        </h1>
+        <p
+          class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed"
+        >
+          A curated showcase of engineering excellence, ranging from scalable
+          web architectures to experimental machine learning models.
+        </p>
+      </header>
+      <div class="flex flex-wrap gap-3 mb-10 pb-4 border-b border-primary/10">
+        <button
+          class="px-6 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-lg shadow-primary/20"
+        >
+          All Projects
+        </button>
+        <button
+          class="px-6 py-2 rounded-full glass text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 transition-all"
+        >
+          Web Dev
+        </button>
+        <button
+          class="px-6 py-2 rounded-full glass text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 transition-all"
+        >
+          UI/UX Design
+        </button>
+        <button
+          class="px-6 py-2 rounded-full glass text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 transition-all"
+        >
+          AI/ML
+        </button>
+        <button
+          class="px-6 py-2 rounded-full glass text-slate-700 dark:text-slate-300 text-sm font-medium hover:bg-primary/10 transition-all"
+        >
+          Open Source
+        </button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="glass-card rounded-xl overflow-hidden group flex flex-col">
+          <div class="relative aspect-video overflow-hidden">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Screenshot of a dark themed data analytics dashboard"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1ZjubHpL1a6i6hpEoPFKsT_VYWYsWHuuSh9JqCofAMNa1D8roarY6gCrby_biriSqrYv_gZ2TmwdjlyOB8_V9pHsLsDlqId7pOhrN2cudBRtHeyaJFa0OZvVFGS0uX7CLAOPLt8yRQ5rD5U-CJIFnFWgGmkiA1tJrb4mkg1rcn0DkpWDOEQkVA8gW1GdW-7hwdqcCl03L-aB9RI1ID5zpElJHaLbnhCNga4OHu9-37sF3l1BEbXNjpp1ZKQwW-Nrki7CkNFquObI"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent"
+            ></div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold mb-2">Quantum Dashboard</h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2"
+            >
+              Enterprise-grade analytics platform featuring real-time data
+              streaming and complex visualization modules.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >Next.js</span
+              >
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >D3.js</span
+              >
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >TypeScript</span
+              >
+            </div>
+            <div
+              class="mt-auto flex items-center justify-between border-t border-primary/10 pt-4"
+            >
+              <div class="flex gap-4">
+                <button
+                  class="text-slate-400 hover:text-primary transition-colors"
+                  title="View Code"
+                >
+                  <span class="material-symbols-outlined text-xl">code</span>
+                </button>
+                <button
+                  class="text-slate-400 hover:text-primary transition-colors"
+                  title="View Backend"
+                >
+                  <span class="material-symbols-outlined text-xl"
+                    >settings_ethernet</span
+                  >
+                </button>
+              </div>
+              <button
+                class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-all"
+              >
+                LIVE DEMO
+                <span class="material-symbols-outlined text-sm"
+                  >open_in_new</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl overflow-hidden group flex flex-col">
+          <div class="relative aspect-video overflow-hidden">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="AI neural network visualization in emerald colors"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNfDg43hNex1AWUOlLRNngXhbl0Yv6MBDckbCWxIBCzeVm74thRwPJcf7pxi_GXpV4Ue_4x7P5ztk-OvkKidMkyaGuOi65rBZnD3zh-KlbDNox_GwDKBbIX2OFXkza62-hLi94YFxPYwUWHJRMVuRFI29GvyXW8zdLQGjzuHUZsBhn8kAWFsB1lGlXf63UtKMSB-Ykc2uoBA61FHqHpMPNkMu8O95NBsHz5f78HFXjjP73746osKb9twahZhqoPTK-rLeGU3Rmjp4"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent"
+            ></div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold mb-2">Neural Style Forge</h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2"
+            >
+              Advanced image processing engine utilizing GANs to apply artistic
+              styles to high-resolution photography.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >Python</span
+              >
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >PyTorch</span
+              >
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >FastAPI</span
+              >
+            </div>
+            <div
+              class="mt-auto flex items-center justify-between border-t border-primary/10 pt-4"
+            >
+              <div class="flex gap-4">
+                <button
+                  class="text-slate-400 hover:text-primary transition-colors"
+                  title="View Code"
+                >
+                  <span class="material-symbols-outlined text-xl">code</span>
+                </button>
+                <button
+                  class="text-slate-400 hover:text-primary transition-colors"
+                  title="View Backend"
+                >
+                  <span class="material-symbols-outlined text-xl"
+                    >database</span
+                  >
+                </button>
+              </div>
+              <button
+                class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-all"
+              >
+                LIVE DEMO
+                <span class="material-symbols-outlined text-sm"
+                  >open_in_new</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl overflow-hidden group flex flex-col">
+          <div class="relative aspect-video overflow-hidden">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Abstract code on a dark green background"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrFKs-bZBT48KpclTDsBFEqID1NrDkEmxlt7RcvFIfPpXOuWvEhRXm4lieiTL49YnCx54CogeuEg1FPiTtf3y5SWbe2NdbT-gNKOUXzyJAakHGUM_7zFHJw7JXY2JVL5qer4zjRb6wEPM2QpSiK1vG_Hn3d_VvTNIzXamGvk8afKV_tpT0ulWvkLDenm2Ev88qEu3TEdBPrIxd6B3woyvDOvUtoF3CaUjhOrrtEa5gIDDip4sB0nY7mkimRtLJOdpWzsHty5pSgTI"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent"
+            ></div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold mb-2">Fintech Core API</h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2"
+            >
+              High-availability payment gateway abstraction layer supporting
+              multi-currency transactions and ledgering.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >Go</span
+              >
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >PostgreSQL</span
+              >
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >Docker</span
+              >
+            </div>
+            <div
+              class="mt-auto flex items-center justify-between border-t border-primary/10 pt-4"
+            >
+              <div class="flex gap-4">
+                <button
+                  class="text-slate-400 hover:text-primary transition-colors"
+                  title="View Code"
+                >
+                  <span class="material-symbols-outlined text-xl">code</span>
+                </button>
+                <button
+                  class="text-slate-400 hover:text-primary transition-colors"
+                  title="View Infrastructure"
+                >
+                  <span class="material-symbols-outlined text-xl"
+                    >cloud_queue</span
+                  >
+                </button>
+              </div>
+              <button
+                class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-all"
+              >
+                DOCS
+                <span class="material-symbols-outlined text-sm"
+                  >description</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl overflow-hidden group flex flex-col">
+          <div class="relative aspect-video overflow-hidden">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Modern mobile app UI design mockup"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD01TAgdS4GmIkQ7Rvp_TCw_C3hIO4EUnQfA8K0v1rAa7k77HWUXkUi1t2KK4uyJeXwiPllEd0evz22yw-NPlxEVEKpyzqOX4-RqKHngOMwBN2AkKUfrYpp9mt34OUtDhDqMbtZAvW624fo5V3NQ6L72X90vnffJ3HYBa-8KmBrdoKnfPqo58c7ROYde8j0MAT2HiLdJ2sEm5qS6F9ekovaTBmN0WMiVli7ti1EcJ6CGTnWHyzpFRfL2vRQPPsJO-LQoF4EC3i6N9w"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent"
+            ></div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold mb-2">EcoTrack Mobile</h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2"
+            >
+              A lifestyle application for monitoring individual carbon footprint
+              with social integration and gamification.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >React Native</span
+              >
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >Firebase</span
+              >
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >Figma</span
+              >
+            </div>
+            <div
+              class="mt-auto flex items-center justify-between border-t border-primary/10 pt-4"
+            >
+              <div class="flex gap-4">
+                <button
+                  class="text-slate-400 hover:text-primary transition-colors"
+                  title="App Store"
+                >
+                  <span class="material-symbols-outlined text-xl"
+                    >phone_iphone</span
+                  >
+                </button>
+                <button
+                  class="text-slate-400 hover:text-primary transition-colors"
+                  title="View Design"
+                >
+                  <span class="material-symbols-outlined text-xl">draw</span>
+                </button>
+              </div>
+              <button
+                class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-all"
+              >
+                CASE STUDY
+                <span class="material-symbols-outlined text-sm"
+                  >visibility</span
+                >
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="glass-card rounded-xl overflow-hidden group flex flex-col">
+          <div class="relative aspect-video overflow-hidden">
+            <img
+              class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              data-alt="Data center server racks with green glowing lights"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgfIRzgSOM4HYlr2-7mL-smECzz5AL7v0JRZgKcIqCQjaiwjHG5BCRsk-aBS1sN9X9IJmVYagpWtyFho4dp0NutPNkAnDkUvzdJVTPwQlY_z2SQ3za8DlF8GpdIAZv_2DyzL1iA5cHdP6pvsnKjkseHvOpcENtwEJ1OQ1fi62SGunUztjy1XTv1tH8qNvUmtVKlJepcF4EH0HExqFHyWeP8f17L73YyXf36XfKwdc_pT5z8YQsiAq8Vdb4G0lHaEmsO6gRxL3NFvU"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-background-dark/80 to-transparent"
+            ></div>
+          </div>
+          <div class="p-6 flex flex-col flex-grow">
+            <h3 class="text-xl font-bold mb-2">Sentinel Security Scraper</h3>
+            <p
+              class="text-slate-600 dark:text-slate-400 text-sm mb-4 line-clamp-2"
+            >
+              Automated vulnerability scanner that monitors package repositories
+              for known security exploits.
+            </p>
+            <div class="flex flex-wrap gap-2 mb-6">
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >Rust</span
+              >
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >Redis</span
+              >
+              <span
+                class="px-2 py-1 rounded bg-primary/20 text-primary dark:text-primary-light text-[10px] font-bold uppercase tracking-wider"
+                >gRPC</span
+              >
+            </div>
+            <div
+              class="mt-auto flex items-center justify-between border-t border-primary/10 pt-4"
+            >
+              <div class="flex gap-4">
+                <button
+                  class="text-slate-400 hover:text-primary transition-colors"
+                  title="View Code"
+                >
+                  <span class="material-symbols-outlined text-xl">code</span>
+                </button>
+              </div>
+              <button
+                class="flex items-center gap-2 px-4 py-2 bg-primary text-white text-xs font-bold rounded-lg hover:bg-primary/90 transition-all"
+              >
+                GITHUB
+                <span class="material-symbols-outlined text-sm">star</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="glass-card rounded-xl overflow-hidden group flex flex-col border-dashed"
+        >
+          <div
+            class="p-8 flex flex-col items-center justify-center flex-grow text-center"
+          >
+            <div
+              class="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4"
+            >
+              <span class="material-symbols-outlined text-primary text-3xl"
+                >add_circle</span
+              >
+            </div>
+            <h3 class="text-xl font-bold mb-2">Your Next Big Idea</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-6">
+              Have a project that needs a developer with focus and precision?
+              Let's collaborate.
+            </p>
+            <button
+              class="px-8 py-3 bg-primary text-white font-bold rounded-xl hover:scale-105 transition-transform"
+            >
+              Hire Me Now
+            </button>
+          </div>
+        </div>
+      </div>
+      <footer
+        class="mt-24 pt-12 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-6"
+      >
+        <p class="text-slate-500 text-sm">
+          © 2024 Developer Portfolio. Built with Tailwind &amp; Passion.
+        </p>
+        <div class="flex gap-6">
+          <a
+            class="text-slate-500 hover:text-primary transition-colors"
+            href="#"
+            >GitHub</a
+          >
+          <a
+            class="text-slate-500 hover:text-primary transition-colors"
+            href="#"
+            >LinkedIn</a
+          >
+          <a
+            class="text-slate-500 hover:text-primary transition-colors"
+            href="#"
+            >Twitter</a
+          >
+          <a
+            class="text-slate-500 hover:text-primary transition-colors"
+            href="#"
+            >Dribbble</a
+          >
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
