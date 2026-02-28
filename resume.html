@@ -46,46 +46,125 @@
     class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased"
   >
     <!-- Persistent Glassmorphism Navbar -->
-    <nav
-      class="fixed top-0 left-0 right-0 z-50 border-b border-primary/20 bg-background-dark/80 backdrop-blur-md"
+    <header
+      class="fixed top-0 z-50 w-full glass-nav border-b border-slate-200 dark:border-white/10"
     >
-      <div
-        class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between"
-      >
-        <div class="flex items-center gap-2 group cursor-pointer">
-          <div
-            class="size-8 bg-primary rounded-lg flex items-center justify-center text-white"
-          >
-            <span class="material-symbols-outlined text-xl">terminal</span>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center gap-2 group cursor-pointer">
+            <div
+              class="p-1.5 bg-primary/20 rounded-lg group-hover:bg-primary/40 transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-primary dark:text-emerald-400"
+                >terminal</span
+              >
+            </div>
+            <span
+              class="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
+              >Shafe Alam</span
+            >
           </div>
-          <span class="font-bold text-lg tracking-tight">Alex Rivers</span>
-        </div>
-        <div
-          class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400"
-        >
-          <a class="hover:text-primary transition-colors" href="#experience"
-            >Experience</a
-          >
-          <a class="hover:text-primary transition-colors" href="#skills"
-            >Skills</a
-          >
-          <a class="hover:text-primary transition-colors" href="#education"
-            >Education</a
-          >
-          <a class="hover:text-primary transition-colors" href="#certifications"
-            >Certifications</a
-          >
-        </div>
-        <div class="flex items-center gap-3">
-          <button
-            class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-bold flex items-center gap-2 transition-all shadow-lg shadow-primary/20"
-          >
-            <span class="material-symbols-outlined text-sm">download</span>
-            <span>Download PDF</span>
-          </button>
+          <nav class="hidden md:flex items-center space-x-8">
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="index.html"
+              >Home</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="projects.html"
+              >Projects</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="learning.html"
+              >Learning</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="blogs.html"
+              >Blogs</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="notes.html"
+              >Notes</a
+            >
+            <div class="flex flex-col items-center gap-1 group">
+              <a
+                class="text-sm font-bold text-[#10b77f] transition-colors"
+                href="resume.html"
+                >Resume</a
+              >
+              <div class="h-1 w-4 bg-[#10b77f] rounded-full"></div>
+            </div>
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="about_me.html"
+              >About</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="contact.html"
+              >Contact</a
+            >
+          </nav>
+          <div class="flex items-center gap-3">
+            <button
+              class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30 flex items-center justify-center"
+              id="theme-toggle"
+              title="Toggle Theme"
+            >
+              <span
+                class="material-symbols-outlined text-[20px] hidden"
+                id="theme-toggle-dark-icon"
+                >light_mode</span
+              >
+              <span
+                class="material-symbols-outlined text-[20px]"
+                id="theme-toggle-light-icon"
+                >dark_mode</span
+              >
+            </button>
+            <a
+              class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px] align-middle"
+                >code</span
+              >
+            </a>
+            <a
+              class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px] align-middle"
+                >person_add</span
+              >
+            </a>
+            <a
+              class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px] align-middle"
+                >share</span
+              >
+            </a>
+            <button
+              class="md:hidden p-2 hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              onclick="
+                document
+                  .getElementById('mobile-menu')
+                  .classList.remove('hidden')
+              "
+            >
+              <span class="material-symbols-outlined">menu</span>
+            </button>
+          </div>
         </div>
       </div>
-    </nav>
+    </header>
     <main class="pt-28 pb-20 px-6">
       <div class="max-w-5xl mx-auto">
         <!-- Hero Header Section -->
@@ -99,9 +178,7 @@
             <div
               class="relative size-32 md:size-40 rounded-full bg-slate-800 border-2 border-primary/30 overflow-hidden bg-cover bg-center"
               data-alt="Professional portrait of a male engineer in a dark studio setting"
-              style="
-                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBfuFTyoPnIi_oG6_JaVavNw0GuBAR8JxRyX1vZuPV0vDZQ_Gp4s95xElQAbyvYkrVcVbd57U3t2lJyaazpNwHjUDlsSSgzahR5NBeTyDjTAIg7Via5nxFNzstemcSq3v7ZC57BJOdo7NW9RaS_rwWF_QXG4MoO7xqslckjs0Bbq4ZrFv8TpvtOTHlu2G7hHT85aeXn_LgWmNjkj_6cuNCyAnQHnfAyG_Ti6YydAFhMNLle3fIpXr-Dx48ZnUYtEEFXYJd6kCuYHHY&quot;);
-              "
+              style="background-image: url(&quot;./public/profile.png&quot;)"
             ></div>
           </div>
           <div class="flex-1 text-center md:text-left">

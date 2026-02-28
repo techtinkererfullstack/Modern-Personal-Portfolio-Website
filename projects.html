@@ -24,12 +24,26 @@
         theme: {
           extend: {
             colors: {
-              primary: "#064c39",
-              "background-light": "#f6f8f7",
-              "background-dark": "#10221d",
+              primary: "#10b981",
+              "background-light": "#f8fdfa",
+              "background-dark": "#06130e",
+              sage: {
+                50: "#f0fdf4",
+                100: "#dcfce7",
+                200: "#bbf7d0",
+                300: "#86efac",
+                400: "#4ade80",
+                500: "#22c55e",
+                600: "#16a34a",
+                700: "#15803d",
+                800: "#166534",
+                900: "#14532d",
+                950: "#052e16",
+              },
             },
             fontFamily: {
               display: ["Inter", "sans-serif"],
+              sans: ["Inter", "sans-serif"],
             },
             borderRadius: {
               DEFAULT: "0.25rem",
@@ -45,92 +59,220 @@
       body {
         font-family: "Inter", sans-serif;
       }
-      .glass {
-        background: rgba(6, 76, 57, 0.1);
+      .glass-nav {
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
-        border: 1px solid rgba(6, 76, 57, 0.2);
       }
+    </style>
+    <style>
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .stagger-item {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .reveal.active .stagger-item {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal.active .stagger-item:nth-child(1) {
+        transition-delay: 0.1s;
+      }
+      .reveal.active .stagger-item:nth-child(2) {
+        transition-delay: 0.2s;
+      }
+      .reveal.active .stagger-item:nth-child(3) {
+        transition-delay: 0.3s;
+      }
+      .reveal.active .stagger-item:nth-child(4) {
+        transition-delay: 0.4s;
+      }
+    </style>
+    <style>
+      html.dark,
+      html:not(.dark) {
+        transition:
+          background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      body,
+      header,
+      footer,
+      section,
+      div,
+      p,
+      h1,
+      h2,
+      h3,
+      a,
+      button {
+        transition:
+          background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+          box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+    </style>
+    <style>
       .glass-card {
-        background: rgba(255, 255, 255, 0.03);
+        background: rgba(255, 255, 255, 0.7);
         backdrop-filter: blur(8px);
-        border: 1px solid rgba(6, 76, 57, 0.3);
+        border: 1px solid rgba(16, 185, 129, 0.1);
+        transition: all 0.3s ease;
+      }
+      .dark .glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
       }
     </style>
   </head>
   <body
-    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen"
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen font-sans"
   >
-    <nav class="sticky top-0 z-50 w-full glass border-b border-primary/20">
-      <div
-        class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between"
-      >
-        <div class="flex items-center gap-3">
-          <div
-            class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-white"
-          >
-            <span class="material-symbols-outlined text-xl">terminal</span>
+    <header
+      class="fixed top-0 z-50 w-full glass-nav border-b border-slate-200 dark:border-white/10"
+    >
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex items-center gap-2 group cursor-pointer">
+            <div
+              class="p-1.5 bg-primary/20 rounded-lg group-hover:bg-primary/40 transition-colors"
+            >
+              <span
+                class="material-symbols-outlined text-primary dark:text-emerald-400"
+                >terminal</span
+              >
+            </div>
+            <span
+              class="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
+              >Shafe Alam</span
+            >
           </div>
-          <span
-            class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100"
-            >Portfolio</span
-          >
-        </div>
-        <div class="hidden md:flex items-center gap-8">
-          <a
-            class="text-sm font-medium hover:text-primary transition-colors"
-            href="#"
-            >Home</a
-          >
-          <a
-            class="text-sm font-medium text-primary underline underline-offset-8"
-            href="#"
-            >Projects</a
-          >
-          <a
-            class="text-sm font-medium hover:text-primary transition-colors"
-            href="#"
-            >About</a
-          >
-          <a
-            class="text-sm font-medium hover:text-primary transition-colors"
-            href="#"
-            >Contact</a
-          >
-        </div>
-        <div class="flex items-center gap-3">
-          <button
-            class="p-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-colors"
-          >
-            <span class="material-symbols-outlined">brand_awareness</span>
-          </button>
-          <div
-            class="w-10 h-10 rounded-full bg-primary/30 border border-primary/50 overflow-hidden"
-          >
-            <img
-              class="w-full h-full object-cover"
-              data-alt="Professional headshot of a developer"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6-KqoxZm8QBQWHEWfhXTSlULleG3nswo2HOeZ2d8AX2oAFQZQE7vi-jTkZDp1HB1lFQK5moqY7G9pPGaY7EuTquC1v9eb1fGyLj3dpRHu9K8EHlWe9oRoiefqhYhSG1Oluj-aSk73guOi9jBSq2S0awoj_hgtDwm3NhtOt_O-75z1FKWSeZlwX431GFkzwt57TCzpjfdn-jeSVFZ5lIqrhA72KWLU3Rwb4QEFRZtlBOr8JZHeYsDZrPqPdnaXvfygjlOCzlYPiWo"
-            />
+          <nav class="hidden md:flex items-center space-x-8">
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="index.html"
+              >Home</a
+            >
+            <div class="flex flex-col items-center gap-1 group">
+              <a
+                class="text-sm font-bold text-[#10b77f] transition-colors"
+                href="projects.html"
+                >Projects</a
+              >
+              <div class="h-1 w-4 bg-[#10b77f] rounded-full"></div>
+            </div>
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="learning.html"
+              >Learning</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="blogs.html"
+              >Blogs</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="notes.html"
+              >Notes</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="resume.html"
+              >Resume</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="about_me.html"
+              >About</a
+            >
+            <a
+              class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              href="contact.html"
+              >Contact</a
+            >
+          </nav>
+          <div class="flex items-center gap-3">
+            <button
+              class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30 flex items-center justify-center"
+              id="theme-toggle"
+              title="Toggle Theme"
+            >
+              <span
+                class="material-symbols-outlined text-[20px] hidden"
+                id="theme-toggle-dark-icon"
+                >light_mode</span
+              >
+              <span
+                class="material-symbols-outlined text-[20px]"
+                id="theme-toggle-light-icon"
+                >dark_mode</span
+              >
+            </button>
+            <a
+              class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px] align-middle"
+                >code</span
+              >
+            </a>
+            <a
+              class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px] align-middle"
+                >person_add</span
+              >
+            </a>
+            <a
+              class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+              href="#"
+            >
+              <span class="material-symbols-outlined text-[20px] align-middle"
+                >share</span
+              >
+            </a>
+            <button
+              class="md:hidden p-2 hover:text-primary dark:hover:text-emerald-400 transition-colors"
+              onclick="
+                document
+                  .getElementById('mobile-menu')
+                  .classList.remove('hidden')
+              "
+            >
+              <span class="material-symbols-outlined">menu</span>
+            </button>
           </div>
         </div>
       </div>
-    </nav>
-    <main class="max-w-7xl mx-auto px-6 py-12">
-      <header class="mb-12">
+    </header>
+    <main class="max-w-7xl mx-auto px-6 py-12 pt-32">
+      <header class="mb-12 reveal parallax-element" data-speed="-0.05">
         <h1
-          class="text-5xl font-black text-slate-900 dark:text-slate-50 mb-4 tracking-tight"
+          class="text-5xl font-black dark:text-slate-50 mb-4 tracking-tight text-slate-800"
         >
           Projects
         </h1>
         <p
-          class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl leading-relaxed"
+          class="text-lg dark:text-slate-400 max-w-2xl leading-relaxed text-slate-600"
         >
           A curated showcase of engineering excellence, ranging from scalable
           web architectures to experimental machine learning models.
         </p>
       </header>
-      <div class="flex flex-wrap gap-3 mb-10 pb-4 border-b border-primary/10">
+      <div
+        class="flex flex-wrap gap-3 mb-10 pb-4 border-b border-primary/10 reveal"
+      >
         <button
           class="px-6 py-2 rounded-full bg-primary text-white text-sm font-semibold shadow-lg shadow-primary/20"
         >
@@ -157,8 +299,10 @@
           Open Source
         </button>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="glass-card rounded-xl overflow-hidden group flex flex-col">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal">
+        <div
+          class="glass-card rounded-xl overflow-hidden group flex flex-col stagger-item shadow-sm hover:shadow-xl hover:-translate-y-1"
+        >
           <div class="relative aspect-video overflow-hidden">
             <img
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -221,7 +365,9 @@
             </div>
           </div>
         </div>
-        <div class="glass-card rounded-xl overflow-hidden group flex flex-col">
+        <div
+          class="glass-card rounded-xl overflow-hidden group flex flex-col stagger-item shadow-sm hover:shadow-xl hover:-translate-y-1"
+        >
           <div class="relative aspect-video overflow-hidden">
             <img
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -284,7 +430,9 @@
             </div>
           </div>
         </div>
-        <div class="glass-card rounded-xl overflow-hidden group flex flex-col">
+        <div
+          class="glass-card rounded-xl overflow-hidden group flex flex-col stagger-item shadow-sm hover:shadow-xl hover:-translate-y-1"
+        >
           <div class="relative aspect-video overflow-hidden">
             <img
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -347,7 +495,9 @@
             </div>
           </div>
         </div>
-        <div class="glass-card rounded-xl overflow-hidden group flex flex-col">
+        <div
+          class="glass-card rounded-xl overflow-hidden group flex flex-col stagger-item shadow-sm hover:shadow-xl hover:-translate-y-1"
+        >
           <div class="relative aspect-video overflow-hidden">
             <img
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -410,7 +560,9 @@
             </div>
           </div>
         </div>
-        <div class="glass-card rounded-xl overflow-hidden group flex flex-col">
+        <div
+          class="glass-card rounded-xl overflow-hidden group flex flex-col stagger-item shadow-sm hover:shadow-xl hover:-translate-y-1"
+        >
           <div class="relative aspect-video overflow-hidden">
             <img
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -464,7 +616,7 @@
           </div>
         </div>
         <div
-          class="glass-card rounded-xl overflow-hidden group flex flex-col border-dashed"
+          class="glass-card rounded-xl overflow-hidden group flex flex-col border-dashed stagger-item shadow-sm hover:shadow-xl hover:-translate-y-1"
         >
           <div
             class="p-8 flex flex-col items-center justify-center flex-grow text-center"
@@ -490,34 +642,94 @@
         </div>
       </div>
       <footer
-        class="mt-24 pt-12 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-6"
+        class="mt-24 pt-12 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-6 reveal"
       >
         <p class="text-slate-500 text-sm">
           © 2024 Developer Portfolio. Built with Tailwind &amp; Passion.
         </p>
         <div class="flex gap-6">
           <a
-            class="text-slate-500 hover:text-primary transition-colors"
+            class="text-slate-500 hover:text-primary dark:hover:text-emerald-400 transition-colors"
             href="#"
             >GitHub</a
           >
           <a
-            class="text-slate-500 hover:text-primary transition-colors"
+            class="text-slate-500 hover:text-primary dark:hover:text-emerald-400 transition-colors"
             href="#"
             >LinkedIn</a
           >
           <a
-            class="text-slate-500 hover:text-primary transition-colors"
+            class="text-slate-500 hover:text-primary dark:hover:text-emerald-400 transition-colors"
             href="#"
             >Twitter</a
           >
           <a
-            class="text-slate-500 hover:text-primary transition-colors"
+            class="text-slate-500 hover:text-primary dark:hover:text-emerald-400 transition-colors"
             href="#"
             >Dribbble</a
           >
         </div>
       </footer>
     </main>
+    <script>
+      const observerOptions = { threshold: 0.1 };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, observerOptions);
+      document
+        .querySelectorAll(".reveal")
+        .forEach((el) => observer.observe(el));
+    </script>
+    <script>
+      (function () {
+        const parallaxElements = document.querySelectorAll(".parallax-element");
+
+        function updateParallax() {
+          const scrollY = window.pageYOffset;
+
+          parallaxElements.forEach((el) => {
+            const speed = parseFloat(el.getAttribute("data-speed")) || 0.1;
+            const yPos = scrollY * speed;
+            el.style.transform = `translateY(${yPos}px)`;
+          });
+
+          requestAnimationFrame(updateParallax);
+        }
+
+        requestAnimationFrame(updateParallax);
+      })();
+    </script>
+    <script>
+      const themeToggleBtn = document.getElementById("theme-toggle");
+      const darkIcon = document.getElementById("theme-toggle-dark-icon");
+      const lightIcon = document.getElementById("theme-toggle-light-icon");
+
+      function updateIcons() {
+        if (document.documentElement.classList.contains("dark")) {
+          darkIcon.classList.remove("hidden");
+          lightIcon.classList.add("hidden");
+        } else {
+          darkIcon.classList.add("hidden");
+          lightIcon.classList.remove("hidden");
+        }
+      }
+
+      updateIcons();
+
+      themeToggleBtn.addEventListener("click", function () {
+        if (document.documentElement.classList.contains("dark")) {
+          document.documentElement.classList.remove("dark");
+          localStorage.setItem("color-theme", "light");
+        } else {
+          document.documentElement.classList.add("dark");
+          localStorage.setItem("color-theme", "dark");
+        }
+        updateIcons();
+      });
+    </script>
   </body>
 </html>

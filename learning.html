@@ -51,54 +51,121 @@
     <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
       <!-- Glassmorphism Navbar -->
       <header
-        class="sticky top-0 z-50 w-full border-b border-primary/20 bg-background-dark/80 backdrop-blur-md px-6 md:px-20 py-4"
+        class="fixed top-0 z-50 w-full glass-nav border-b border-slate-200 dark:border-white/10"
       >
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-          <div class="flex items-center gap-3">
-            <div class="bg-primary p-2 rounded-lg">
-              <span class="material-symbols-outlined text-white text-xl"
-                >school</span
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-2 group cursor-pointer">
+              <div
+                class="p-1.5 bg-primary/20 rounded-lg group-hover:bg-primary/40 transition-colors"
+              >
+                <span
+                  class="material-symbols-outlined text-primary dark:text-emerald-400"
+                  >terminal</span
+                >
+              </div>
+              <span
+                class="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
+                >Shafe Alam</span
               >
             </div>
-            <h2 class="text-xl font-bold tracking-tight text-white">
-              Portfolio
-            </h2>
-          </div>
-          <nav class="hidden md:flex items-center gap-8">
-            <a
-              class="text-sage-muted hover:text-white text-sm font-medium transition-colors"
-              href="#"
-              >Home</a
-            >
-            <a
-              class="text-sage-muted hover:text-white text-sm font-medium transition-colors"
-              href="#"
-              >Projects</a
-            >
-            <a
-              class="text-white text-sm font-bold border-b-2 border-primary pb-1 transition-colors"
-              href="#"
-              >Learning</a
-            >
-            <a
-              class="text-sage-muted hover:text-white text-sm font-medium transition-colors"
-              href="#"
-              >About</a
-            >
-          </nav>
-          <div class="flex items-center gap-4">
-            <button
-              class="bg-primary text-white px-5 py-2 rounded-lg text-sm font-bold hover:bg-emerald-800 transition-all"
-            >
-              Contact
-            </button>
-            <div
-              class="size-10 rounded-full border border-primary/30 bg-cover bg-center"
-              data-alt="User profile avatar portrait"
-              style="
-                background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDPiwM7rVikzce7vcPyYzXGHPzMwuov0Mp_MjH4HIPndPUOrPn_DI-Oz1-Jawh50PV1M1Kudajn9XCatxIUb1MfL-DyhAVZmb0T5tx88mdrhsEa2qSxKnRnXbilHs_gOhR8mjtLHlJx5qN9rPsnoeTKW6f4b49Kmhdrw8c3g8PyHLpyp638co7h52wXGMUh0O3OSchFvxsmrANUCnMaCeps_9wod6c54vzIj6r4eKjEsZjuuo1_oJu3aFm6Ln5Om54eBZIDdZRAKEI&quot;);
-              "
-            ></div>
+            <nav class="hidden md:flex items-center space-x-8">
+              <a
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="index.html"
+                >Home</a
+              >
+              <a
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="projects.html"
+                >Projects</a
+              >
+              <div class="flex flex-col items-center gap-1 group">
+                <a
+                  class="text-sm font-bold text-[#10b77f] transition-colors"
+                  href="learning.html"
+                  >Learning</a
+                >
+                <div class="h-1 w-4 bg-[#10b77f] rounded-full"></div>
+              </div>
+              <a
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="blogs.html"
+                >Blogs</a
+              >
+              <a
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="notes.html"
+                >Notes</a
+              >
+              <a
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="resume.html"
+                >Resume</a
+              >
+              <a
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="about_me.html"
+                >About</a
+              >
+              <a
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="contact.html"
+                >Contact</a
+              >
+            </nav>
+            <div class="flex items-center gap-3">
+              <button
+                class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30 flex items-center justify-center"
+                id="theme-toggle"
+                title="Toggle Theme"
+              >
+                <span
+                  class="material-symbols-outlined text-[20px] hidden"
+                  id="theme-toggle-dark-icon"
+                  >light_mode</span
+                >
+                <span
+                  class="material-symbols-outlined text-[20px]"
+                  id="theme-toggle-light-icon"
+                  >dark_mode</span
+                >
+              </button>
+              <a
+                class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-[20px] align-middle"
+                  >code</span
+                >
+              </a>
+              <a
+                class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-[20px] align-middle"
+                  >person_add</span
+                >
+              </a>
+              <a
+                class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-[20px] align-middle"
+                  >share</span
+                >
+              </a>
+              <button
+                class="md:hidden p-2 hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                onclick="
+                  document
+                    .getElementById('mobile-menu')
+                    .classList.remove('hidden')
+                "
+              >
+                <span class="material-symbols-outlined">menu</span>
+              </button>
+            </div>
           </div>
         </div>
       </header>

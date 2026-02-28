@@ -62,78 +62,125 @@
     <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
       <!-- Top Navigation -->
       <header
-        class="sticky top-0 z-50 glass-effect border-b border-glass-border px-6 md:px-20 py-4"
+        class="fixed top-0 z-50 w-full glass-nav border-b border-slate-200 dark:border-white/10"
       >
-        <div class="max-w-7xl mx-auto flex items-center justify-between">
-          <div class="flex items-center gap-8">
-            <div
-              class="flex items-center gap-3 text-primary dark:text-accent-sage"
-            >
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="flex justify-between items-center h-16">
+            <div class="flex items-center gap-2 group cursor-pointer">
               <div
-                class="size-8 bg-primary/20 rounded-lg flex items-center justify-center"
+                class="p-1.5 bg-primary/20 rounded-lg group-hover:bg-primary/40 transition-colors"
               >
-                <span class="material-symbols-outlined text-2xl">database</span>
+                <span
+                  class="material-symbols-outlined text-primary dark:text-emerald-400"
+                  >terminal</span
+                >
               </div>
-              <h2 class="text-xl font-extrabold tracking-tight">DevNotes</h2>
+              <span
+                class="text-xl font-bold tracking-tight text-slate-900 dark:text-white"
+                >Shafe Alam</span
+              >
             </div>
-            <nav class="hidden md:flex items-center gap-6">
+            <nav class="hidden md:flex items-center space-x-8">
               <a
-                class="text-sm font-medium opacity-70 hover:opacity-100 transition-opacity"
-                href="#"
-                >Portfolio</a
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="index.html"
+                >Home</a
               >
               <a
-                class="text-sm font-medium opacity-70 hover:opacity-100 transition-opacity"
-                href="#"
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="projects.html"
                 >Projects</a
               >
               <a
-                class="text-sm font-medium text-primary dark:text-accent-sage"
-                href="#"
-                >Notes</a
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="learning.html"
+                >Learning</a
               >
               <a
-                class="text-sm font-medium opacity-70 hover:opacity-100 transition-opacity"
-                href="#"
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="blogs.html"
+                >Blogs</a
+              >
+              <div class="flex flex-col items-center gap-1 group">
+                <a
+                  class="text-sm font-bold text-[#10b77f] transition-colors"
+                  href="notes.html"
+                  >Notes</a
+                >
+                <div class="h-1 w-4 bg-[#10b77f] rounded-full"></div>
+              </div>
+              <a
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="resume.html"
+                >Resume</a
+              >
+              <a
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="about_me.html"
                 >About</a
               >
+              <a
+                class="text-sm font-medium hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                href="contact.html"
+                >Contact</a
+              >
             </nav>
-          </div>
-          <div class="flex items-center gap-4">
-            <div
-              class="hidden lg:flex items-center glass-effect rounded-lg px-3 py-1.5 gap-2 border border-glass-border"
-            >
-              <span class="material-symbols-outlined text-accent-sage text-xl"
-                >search</span
+            <div class="flex items-center gap-3">
+              <button
+                class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30 flex items-center justify-center"
+                id="theme-toggle"
+                title="Toggle Theme"
               >
-              <input
-                class="bg-transparent border-none focus:ring-0 text-sm w-48 placeholder:text-accent-sage/50"
-                placeholder="Quick search..."
-                type="text"
-              />
-              <span
-                class="text-[10px] border border-glass-border rounded px-1.5 py-0.5 opacity-50"
-                >CMD K</span
+                <span
+                  class="material-symbols-outlined text-[20px] hidden"
+                  id="theme-toggle-dark-icon"
+                  >light_mode</span
+                >
+                <span
+                  class="material-symbols-outlined text-[20px]"
+                  id="theme-toggle-light-icon"
+                  >dark_mode</span
+                >
+              </button>
+              <a
+                class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+                href="#"
               >
-            </div>
-            <button
-              class="bg-primary hover:bg-primary/90 text-white px-5 py-2 rounded-lg text-sm font-bold transition-colors"
-            >
-              Contact
-            </button>
-            <div
-              class="size-10 rounded-full border-2 border-primary/30 overflow-hidden"
-            >
-              <img
-                class="w-full h-full object-cover"
-                data-alt="Professional developer portrait avatar"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDlcPVs6Cu9hJB0SH8YF6MnAlNpNTx0YVJ-DH-DL8ZHZ7Akj_oNoWPoMBq3wLzkKZAQKJTHoME6fzUgLvBhls98nobSzebUyLJBcqFNWKYgzujLSsfE4M0Uds4l09y56HETwWaVc5ddMn9qQulBo1VOLOxFy2z8ZtteyNEJWMVsdbr1WcQbRBAHoMZNsQpwth-CdVOzN0s9ojkTEwylfxXpLK6y6864TtNe9NfJLDiojPJhl-pDCm4_rUI0WzXQXW6g1aIxIT4g0k"
-              />
+                <span class="material-symbols-outlined text-[20px] align-middle"
+                  >code</span
+                >
+              </a>
+              <a
+                class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-[20px] align-middle"
+                  >person_add</span
+                >
+              </a>
+              <a
+                class="p-2 rounded-lg bg-slate-200/50 dark:bg-white/5 hover:bg-primary/20 transition-all border border-transparent hover:border-primary/30"
+                href="#"
+              >
+                <span class="material-symbols-outlined text-[20px] align-middle"
+                  >share</span
+                >
+              </a>
+              <button
+                class="md:hidden p-2 hover:text-primary dark:hover:text-emerald-400 transition-colors"
+                onclick="
+                  document
+                    .getElementById('mobile-menu')
+                    .classList.remove('hidden')
+                "
+              >
+                <span class="material-symbols-outlined">menu</span>
+              </button>
             </div>
           </div>
         </div>
       </header>
-      <main class="max-w-7xl mx-auto px-6 md:px-20 py-12 w-full">
+      <main class="max-w-7xl mx-auto px-6 md:px-20 py-20 w-full">
         <!-- Hero Section -->
         <div class="mb-12">
           <h1
